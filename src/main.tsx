@@ -1,13 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from 'sonner';
 
 import './styles/index.css'
 import Home from './pages/Home.tsx'
 import ResumePage from './pages/Resume.tsx'
-import Layout from './pages/Layout.tsx';
+import Layout from './layouts/Layout.tsx';
 import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
@@ -35,11 +34,9 @@ const toasterStyle: React.CSSProperties & Record<string, string> = {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <HelmetProvider>
-        <RouterProvider router={router}/>
-      </HelmetProvider>
-      <Toaster style={toasterStyle} duration={4500}/>
-    </ThemeProvider>
+    <HelmetProvider>
+      <RouterProvider router={router}/>
+    </HelmetProvider>
+    <Toaster style={toasterStyle} duration={4500}/>
   </StrictMode>,
 )
