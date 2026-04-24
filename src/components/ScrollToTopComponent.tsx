@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CgArrowUp } from 'react-icons/cg';
+import { FaLevelUpAlt } from "react-icons/fa";
 
 export default function ScrollToTopComponent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,7 +44,7 @@ export default function ScrollToTopComponent() {
           className="cursor-pointer z-1000 fixed bottom-6 right-3.5 sm:right-5 p-3 rounded-full bg-accent shadow-lg hover:bg-primary transition-all"
           aria-label="Scroll to top"
         >
-          <CgArrowUp size={20} color="white" />
+          <FaLevelUpAlt size={20} color="white" />
         </motion.button>
       )}
     </AnimatePresence>
