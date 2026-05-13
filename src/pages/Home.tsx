@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 // sections
 import Hero from "@/sections/Hero";
 const Projects = lazy(() => import("../sections/Projects"));
