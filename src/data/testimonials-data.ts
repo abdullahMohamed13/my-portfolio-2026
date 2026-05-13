@@ -18,7 +18,7 @@ export const testimonialsData:TestimonialProps[] = [
     {
         id: 2,
         name: 'Dalia Roushdy',
-        role: 'Client',
+        role: 'Client - English Translator',
         text: "From day one, he took the time to fully understand my needs and project requirements — and that showed in every step of the process. The final product was nothing short of amazing; it exceeded what I had in mind.",
         img: '/testimonials/ms-dalia.webp',
     },
@@ -32,7 +32,7 @@ export const testimonialsData:TestimonialProps[] = [
     {
         id: 3,
         name: 'Yasser Allam',
-        role: 'Client',
+        role: 'Client - Data Analyst',
         text: "Abdallah is one of the most professional people I've worked with. He understood my requirements quickly and delivered high-quality work beyond my expectations. I'm comfortable working with him, and I'll definitely work with him again.",
         href: 'https://khamsat.com/user/abdallah_mohamed13/reviews/1092981',
         img: '/testimonials/yasser-allam.webp',
