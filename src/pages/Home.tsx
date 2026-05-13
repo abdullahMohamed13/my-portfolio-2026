@@ -77,14 +77,14 @@ export default function App() {
           <FadeInOnScroll direction="left">
             <About />
           </FadeInOnScroll>
+          <FadeInOnScroll direction="down">
+            <Testimonials />
+          </FadeInOnScroll>
           <FadeInOnScroll direction="up">
             <Projects />
           </FadeInOnScroll>
           <FadeInOnScroll direction="left">
             <Skills />
-          </FadeInOnScroll>
-          <FadeInOnScroll direction="down">
-            <Testimonials />
           </FadeInOnScroll>
           <FadeInOnScroll direction="left">
             <Contact />
