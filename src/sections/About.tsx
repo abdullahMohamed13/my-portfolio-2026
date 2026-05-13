@@ -4,10 +4,8 @@ import AnimatedHeader from "../components/AnimatedHeader"
 // shadcn/ui
 import { Badge } from "@/components/ui/badge";
 import { SiNextdotjs }from 'react-icons/si';
-import { PiHeart } from "react-icons/pi";
 import TrueFocus from "@/components/react-bits/TextAnimations/TrueFocus";
-import { Button } from "@/components/ui/button";
-import { scrollToSection } from "@/store/nav-items";
+import { internships } from "@/data/internships";
 
 export default function About() {
   return (
@@ -23,24 +21,44 @@ export default function About() {
         <Separator />
       </div>
 
-      <div className="text-xl leading-8">
-          I would love to connect with fellow developers, designers, and teams who are passionate about creating exceptional web experiences,
-          so feel free to reach out
-          <PiHeart color="red" size={20} className="ml-1 inline" />
+      <div>
+        <h3 className="text-2xl font-semibold flex-center gap-1 mt-4">
+          Internships & Student-Activities I have been part of
+        </h3>
+
+        <div className="flex items-center justify-around gap-3 flex-wrap mt-6">
+          {internships.map((internship) => {
+            return (
+              <a
+                key={internship.id}
+                href={internship.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+                style={{ '--brand-color': internship.company.color } as React.CSSProperties}
+              >
+                <img
+                  src={internship.company.logo}
+                  alt={internship.company.name}
+                  className="border-(--brand-color) p-0.5 w-32 h-32 rounded-full border-4 sm:border-transparent group-hover:border-(--brand-color) object-contain mx-auto hover:scale-110 transition-all duration-300"
+                />
+                <h4 className="text-lg group-hover:text-(--brand-color) transition-colors font-semibold mt-2">{internship.company.name}</h4>
+              </a>
+            );
+          })}
+        </div>
       </div>
-      <Button className="uppercase mt-4 bg-linear-to-r hover:from-primary transition-colors duration-1000 hover:to-secondary from-accent to-primary text-white text-2xl px-8 py-7 font-bold rounded-full" onClick={() => scrollToSection('contact')}>Reach Out Now!</Button>
-      
+
       <div className="max-w-60 my-8 md:max-w-120 mx-auto">
         <Separator />
       </div>
 
-      <div className="max-w-3xl mx-auto flex flex-col gap-3">
+      <div className="mx-auto flex flex-col gap-3">
         <h3 className="text-2xl font-semibold flex-center gap-1 mt-4">
-          Next Learning Goal On The Queue:
+          Next Learning Goals On The Queue:
         </h3>
         <div
-          className="text-base sm:text-xl flex-center flex-col gap-2 px-4 py-2 pb-5 shadow-sm hover:scale-[1.02]
-          transition-transform duration-300"
+          className="text-base sm:text-xl flex-center flex-col gap-2 px-4 py-2 pb-5"
         >
           <div className="flex items-center">
             <TrueFocus 

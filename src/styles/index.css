@@ -3,93 +3,31 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@layer base {
-  * {
-    @apply border-border box-border;
-  }
-
-  h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-  }
-
-  body {
-    @apply m-0 bg-background text-foreground tracking-normal;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-@layer utilities {
-  .flex-center {
-    @apply flex justify-center items-center
-  }
-  .flex-between-center {
-    @apply flex justify-between items-center
-  }
-  .flex-section-center {
-    @apply flex justify-center items-center flex-col;
-  }
-  .section-padding {
-    @apply py-14;
-  }
-}
-
 /* THEME MAIN COLORS */
 :root {
-  --background: oklch(0.9674 0.0013 286.3752);
+  --background: #f4f4f5;
   --foreground: oklch(0.4474 0.0343 261.3244);
   --card: oklch(1.0000 0 0);
   --card-foreground: oklch(0.1408 0.0044 285.8229);
   --popover: oklch(1.0000 0 0);
   --popover-foreground: oklch(0.1408 0.0044 285.8229);
-  --primary: oklch(0.6048 0.2166 257.2136);
+  --primary: #007bff;
   --primary-foreground: oklch(0 0 0);
   --secondary: oklch(0.5431 0.0927 194.7689);
   --secondary-foreground: oklch(0.1408 0.0044 285.8229);
   --muted: oklch(0.9674 0.0013 286.3752);
   --muted-foreground: oklch(0.5517 0.0138 285.9385);
   --accent: #9370DB;
+  /* #6A5ACD */
   --accent-foreground: oklch(0 0 0);
   --destructive: oklch(0.5771 0.2152 27.3250);
   --destructive-foreground: oklch(1.0000 0 0);
   --border: oklch(0.9197 0.0040 286.3202);
   --input: oklch(1.0000 0 0);
   --ring: oklch(0.7090 0.1592 293.5412);
-  --font-sans: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  --font-serif: ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
-  --font-mono: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   --radius: 0.5rem;
   --tracking-normal: -0.025em;
   --spacing: 0.25rem;
-}
-
-.dark {
-  --background: oklch(0.2103 0.0059 285.8852);
-  --foreground: oklch(0.9288 0.0126 255.5078);
-  --card: #1f1f23;
-  --card-foreground: oklch(1.0000 0 0);
-  --popover: oklch(0.2739 0.0055 286.0326);
-  --popover-foreground: oklch(1.0000 0 0);
-  --primary: oklch(0.6048 0.2166 257.2136);
-  --primary-foreground: oklch(0 0 0);
-  --secondary: oklch(0.5431 0.0927 194.7689);
-  --secondary-foreground: oklch(1.0000 0 0);
-  --muted: oklch(0.2711 0.0110 285.6414);
-  --muted-foreground: oklch(0.7118 0.0129 286.0665);
-  --accent: #6A5ACD;
-  --accent-foreground: oklch(1.0000 0 0);
-  --destructive: oklch(0.6368 0.2078 25.3313);
-  --destructive-foreground: oklch(1.0000 0 0);
-  --border: oklch(0.3703 0.0119 285.8054);
-  --input: oklch(0.2739 0.0055 286.0326);
-  --ring: oklch(0.7090 0.1592 293.5412);
-  --font-sans: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  --font-serif: ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
-  --font-mono: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  --radius: 0.5rem;
 }
 
 @theme inline {
@@ -113,9 +51,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --font-serif: var(--font-serif);
+  --font-display: 'Syne', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-sans: 'Exo 2', sans-serif;
+  --font-nippo: 'Nippo', Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -123,22 +62,81 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-::-webkit-scrollbar {
-  display: none;
+@layer base {
+  * {
+    @apply border-border box-border;
+  }
+
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+  }
+
+  body {
+    @apply m-0 bg-background text-foreground tracking-normal;
+    font-family: var(--font-sans);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body::-webkit-scrollbar {
+    width: 11px
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--background);
+    border-radius: 1px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 1px;
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+    border-radius: 1px;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--primary)
+                      var(--background);
+    }
+  }
 }
 
-html, body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrolled-header {
-  color: var(--foreground);
-  border-left-width: 5px;
-  transition: ease-out .3s;
-}
-
-.scrolled-header-button {
-  background-color: var(--accent);
-  transition: 0.3s;
+@layer utilities {
+  /* Flex Classes */
+  .flex-center {
+    @apply flex justify-center items-center
+  }
+  .flex-between-center {
+    @apply flex justify-between items-center
+  }
+  .flex-section-center {
+    @apply flex justify-center items-center flex-col;
+  }
+  /* Sections */
+  .section-padding {
+    @apply py-14;
+  }
+  /* Other Utility Classes */
+  .sub-heading {
+    @apply text-lg text-foreground/70 -mt-5 px-4 sm:px-0 text-center hover:scale-[1.02] transition-transform duration-300;
+  }
+  .scrolled-header {
+    color: var(--foreground);
+    border-left-width: 5px;
+    transition: ease-out .3s;
+  }
+  .scrolled-header-button {
+    background-color: var(--accent);
+    transition: 0.3s;
+  }
 }

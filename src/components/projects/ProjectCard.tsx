@@ -14,7 +14,7 @@ import {
 // Custom Reusable Components
 import PixelTransition from "../react-bits/Animations/PixelTransition";
 import ProjectActionButton from "@/components/projects/ProjectActionButton";
-import type { ProjectProps } from "@/sections/Projects";
+import type { ProjectProps } from '@/types/ProjectProps';
 
 export default function ProjectCard({proj, index}: {proj: ProjectProps, index: number}) {
     return (

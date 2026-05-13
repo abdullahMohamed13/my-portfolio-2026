@@ -10,7 +10,7 @@ export default function Layout() {
             className="flex flex-col min-h-screen selection:bg-primary selection:text-white"
         >
             <ScrollToTopComponent />
-            <main className="flex-grow">
+            <main className="grow">
                 <Outlet />
             </main>
             <Footer />

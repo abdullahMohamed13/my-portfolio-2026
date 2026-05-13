@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLevelUpAlt } from "react-icons/fa";
+import ScrollSound from '@/assets/sound/scroll.oga?url';
+import { playSound } from "@/utils/playSound";
 
 export default function ScrollToTopComponent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +31,8 @@ export default function ScrollToTopComponent() {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    });
+	});
+	  playSound(ScrollSound);
   };
 
   return (
@@ -41,7 +44,7 @@ export default function ScrollToTopComponent() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="cursor-pointer z-1000 fixed bottom-6 right-3.5 sm:right-5 p-3 rounded-full bg-accent shadow-lg hover:bg-primary transition-all"
+          className="cursor-pointer z-1000 fixed bottom-6 right-3.5 sm:right-5 p-4 rounded-full bg-accent shadow-lg hover:bg-primary transition-all"
           aria-label="Scroll to top"
         >
           <FaLevelUpAlt size={20} color="white" />

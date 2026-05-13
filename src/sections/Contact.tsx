@@ -1,9 +1,15 @@
+import { toast } from 'sonner';
 import { useState } from 'react';
+import emailjs from 'emailjs-com';
+
 import AnimatedHeader from './../components/AnimatedHeader';
 import { Button } from '@/components/ui/button';
-import emailjs from 'emailjs-com';
-import { toast } from 'sonner';
+
 import { Mail, MessageSquare, Send, SendHorizontal } from 'lucide-react';
+
+import { playSound } from '@/utils/playSound';
+import ConfirmationSound from '@/assets/sound/notification.oga?url'
+import ErrorSound from '@/assets/sound/error.oga?url'
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -37,9 +43,14 @@ export default function Contact() {
         setSubmitted(true);
         setForm({ email: '', subject: '', message: '' });
         setTimeout(() => setSubmitted(false), 5000);
+
+        // Play this sound effect when the message is successfully sent
+        playSound(ConfirmationSound)
+
         toast.success("Your message is successfully sent, I'll reach out to you soon <3");
-    }, () => {
-        toast.error('Failed to send message, please try again.');
+	}, () => {
+		playSound(ErrorSound);
+        toast.error('Failed to send your message, please try again.');
     });
   };
 
@@ -48,12 +59,14 @@ export default function Contact() {
   return (
     <section id="contact" className="flex-section-center px-4 section-padding">
       <div className='flex items-center justify-center flex-col gap-0 mb-3'>
-        <AnimatedHeader text='Contact Me' className='mb-1 font-bold text-center'/>
-        <div className='text-muted-foreground -mt-3'>Let's Have A Conversation!</div>
+        <AnimatedHeader text='Contact Me'/>
+        <h3 className='sub-heading'>
+          /* Let's Have A Conversation! */
+        </h3>
       </div>
 
       <div className="flex flex-col gap-6 w-full max-w-xl bg-card rounded-2xl shadow-xl p-8">
-        <p className="text-base text-red-500 font-medium -mt-2">
+        <p className="text-base text-destructive font-medium -mt-2">
           Kindly enter a valid gmail address to ensure I can get back to you.
         </p>
 
@@ -109,7 +122,7 @@ export default function Contact() {
 
           <Button
             type="submit"
-            className="mt-2 font-semibold bg-accent hover:bg-accent/80 focus:outline-none focus:ring-2"
+            className="mt-2 font-semibold bg-primary hover:bg-primary/80 focus:outline-none focus:ring-2"
             disabled={submitted}
           >
             <div className='flex items-center gap-1'>
