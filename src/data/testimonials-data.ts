@@ -20,7 +20,7 @@ export const testimonialsData:TestimonialProps[] = [
         name: 'Dalia Roushdy',
         role: 'Client',
         text: "From day one, he took the time to fully understand my needs and project requirements — and that showed in every step of the process. The final product was nothing short of amazing; it exceeded what I had in mind.",
-        img: '',
+        img: '/testimonials/ms-dalia.webp',
     },
     // {
     //     id: 2,
