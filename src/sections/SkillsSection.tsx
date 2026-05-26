@@ -12,10 +12,9 @@ import {
   AiOutlineApi, 
   AiOutlineBgColors, 
   AiOutlineTool, 
-  AiOutlineRocket,
   AiOutlineCloudServer
 } from "react-icons/ai";
-import { languages, frameworks_libraries, styling_ui, backend, tools, planningToLearn } from '@/data/skills';
+import { languages, frameworks_libraries, styling_ui, backend, tools } from '@/data/skills';
 import { playSound } from '@/utils/playSound';
 import ClickSound from '@/assets/sound/click.oga?url';
 
@@ -89,13 +88,6 @@ export default function Skills() {
 	        icon: <AiOutlineTool size={listItemIconSize}/>,
 	        value: 'tools',
 	        data: tools,
-	    },
-	    { 
-	        label: "What's Next", 
-	        fn: () => setCurrentChoice('next'),
-	        icon: <AiOutlineRocket size={listItemIconSize}/>,
-	        value: 'next',
-	        data: planningToLearn,
 	    },
     ];
 

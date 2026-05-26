@@ -130,29 +130,10 @@ const tools: SkillsProps[] = [
     // },
 ]
 
-const planningToLearn: SkillsProps[] = [
-    {
-        label: 'Next JS',
-        color: '#0070f3',
-        img: '/skills/next.svg',
-    },
-    {
-        label: 'Laravel',
-        color: '#FF2D20',
-        img: '/skills/laravel.svg',
-    },
-    {
-        label: 'Jest',
-        color: '#973755',
-        img: '/skills/jest.svg',
-    },
-]
-
 export {
     languages,
     frameworks_libraries,
     styling_ui,
     backend,
     tools,
-    planningToLearn
 }
