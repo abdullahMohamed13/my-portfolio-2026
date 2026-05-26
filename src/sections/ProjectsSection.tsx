@@ -6,7 +6,7 @@ import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-padding flex-section-center">
+    <section id="projects" className="px-6 md:px-0 section-padding flex-section-center">
       <AnimatedHeader text="Projects" />
       <h3 className="sub-heading">
         /* I've worked on many projects, here are a few of my favorites! */

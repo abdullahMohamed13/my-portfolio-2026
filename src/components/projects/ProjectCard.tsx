@@ -19,7 +19,7 @@ function ProjectButton({ ...props }: ProjectButtonProps) {
 
 export default function ProjectCard({proj}: {proj: ProjectProps}) {
     return (
-      <div className="relative bg-card text-card-foreground p-4 rounded-2xl flex flex-col items-center gap-4">
+      <div className="relative bg-card text-card-foreground px-5 py-4 rounded-2xl flex flex-col items-center gap-4">
               
         {/* Deployment Platform Badge */}
         <div className="absolute bg-popover text-xs top-6 right-6 z-2 p-1.5 flex gap-2 items-center rounded-lg">
