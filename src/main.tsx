@@ -6,6 +6,7 @@ import { Toaster } from 'sonner';
 import './styles/index.css'
 import Home from './pages/Home.tsx'
 import ResumePage from './pages/Resume.tsx'
+import NotFoundPage from './pages/NotFound.tsx'
 import Layout from './layouts/Layout.tsx';
 import { HelmetProvider } from "react-helmet-async";
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: 'resume',
         element: <ResumePage />
+      },
+      {
+        path: '*',
+        element: <NotFoundPage />
       }
     ]
   }
