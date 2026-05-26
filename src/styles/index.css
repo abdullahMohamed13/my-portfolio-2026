@@ -79,12 +79,12 @@
   body {
     @apply m-0 bg-background text-foreground tracking-normal;
     font-family: var(--font-sans);
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body::-webkit-scrollbar {
