@@ -26,9 +26,9 @@ export const projects: ProjectProps[] = [
         icon: <SiReactquery />
       },
     ],
-    description: `A full-stack team project for a medical booking platform where users can book doctors, manage appointments, receive notifications,
-    and make online payments. I contributed by building the doctor details page, user reviews, notification system, payment workflow,
-    and nearby-doctor map integration.`,
+		description: `A full-stack team project for a medical booking platform where users can discover doctors,
+    book appointments, receive notifications, and pay online.
+    I owned the doctor details page, reviews, notifications, payment workflow, and nearby-doctor map.`,
     imgSrc: '/projects/cure.png',
     projectInSite: '/projects/cure-home-page.webp',
     liveURL: 'https://cure-frontend-team-3.netlify.app',
@@ -58,9 +58,9 @@ export const projects: ProjectProps[] = [
         icon: <SiClerk />
       },
     ],
-    description: `A full-stack booking system built for a Mixed Martial Arts (MMA) gym.
-    The system enables visitors to explore the gym's classes, coaches, branches, and membership offerings.
-    Users can seamlessly register for accounts and reserve training sessions through an integrated plans and booking interface.`,
+    description: `Full-stack booking system built for a Mixed Martial Arts (MMA) gym.
+    The system enables fighters to explore the gym's classes, coaches, branches, and membership offerings.
+    Then create an account and book training sessions.`,
     imgSrc: '/projects/titan-mma.webp',
     projectInSite: '/projects/titan-mma-home-page.webp',
     liveURL: 'https://titan-mma-gym.netlify.app',
@@ -86,8 +86,8 @@ export const projects: ProjectProps[] = [
         icon: <SiCss3 />
       },
     ],
-    description: `Free online chess clock, with customizable time controls & dashboard to track game
-    results. Built it to play chess with my homies and it's perfect for over-the-board speed chess.`,
+		description: `Free online chess clock, built it to play chess with my friends and it's perfect for
+    over-the-board chess. Comes with customizable time controls, your live Chess.com or Lichess rating pulled up instantly by username (built it to flex my rating 😉), and a results tracker.`,
     imgSrc: '/projects/chess-times-square.webp',
     projectInSite: '/projects/chess-times-square-home-page.webp',
     liveURL: 'https://chesstimessquare.onrender.com',

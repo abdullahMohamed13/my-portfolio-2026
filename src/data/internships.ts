@@ -21,6 +21,15 @@ export const internships: InternshipProps[] = [
  },
  {
   id: 2,
+  href: "https://developers.google.com/community/experts/",
+  company: {
+   name: "Google Dev Experts",
+   logo: "/internships/google-developer.png",
+   color: "#EA4335",
+  },
+ },
+ {
+  id: 3,
   href: "https://gizasystems.com/",
   company: {
    name: "Giza Systems",
@@ -29,7 +38,7 @@ export const internships: InternshipProps[] = [
   },
  },
  {
-  id: 3,
+  id: 4,
   href: "https://www.facebook.com/IEEE.ElShoroukAcademy.SB",
   company: {
    name: "IEEE SHA",
@@ -38,7 +47,7 @@ export const internships: InternshipProps[] = [
   },
  },
  {
-  id: 4,
+  id: 5,
   href: "https://eyouthlearning.com/",
   company: {
    name: "EYouth",
@@ -47,7 +56,7 @@ export const internships: InternshipProps[] = [
   },
  },
  {
-  id: 5,
+  id: 6,
   href: "https://huma-volve.com/company-profile/",
   company: {
    name: "Huma Volve",
@@ -55,13 +64,13 @@ export const internships: InternshipProps[] = [
    color: "#1900AD",
   },
  },
- {
-  id: 6,
-  href: "https://www.linkedin.com/company/108834010/",
-  company: {
-   name: "Afaaq Ware",
-   logo: "/internships/afaaq-ware.webp",
-   color: "#343379",
-  },
- },
+ // {
+ //  id: 6,
+ //  href: "https://www.linkedin.com/company/108834010/",
+ //  company: {
+ //   name: "Afaaq Ware",
+ //   logo: "/internships/afaaq-ware.webp",
+ //   color: "#343379",
+ //  },
+ // },
 ];

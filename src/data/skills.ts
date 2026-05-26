@@ -39,8 +39,13 @@ const languages: SkillsProps[] = [
 ]
 
 const frameworks_libraries: SkillsProps[] = [
-    {
-        label: 'React.Js',
+		{
+			label: 'Next.Js',
+        color: '#000',
+        img: '/skills/next.svg',
+    },
+		{
+			label: 'React.Js',
         color: '#61DAFB',
         img: '/skills/react.svg',
     },
@@ -81,11 +86,6 @@ const styling_ui: SkillsProps[] = [
         label: 'Material UI',
         color: '#007FFF',
         img: '/skills/material-ui.svg',
-    },
-    {
-        label: 'Framer Motion',
-        color: '#0055FF',
-        img: '/skills/framer-motion.webp',
     },
 ]
 
