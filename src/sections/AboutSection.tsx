@@ -23,7 +23,7 @@ export default function About() {
 
       <div>
         <h3 className="text-2xl font-semibold flex-center gap-1 mt-4">
-          Internships & Student-Activities I have been part of
+        	My Experience & Engagements
         </h3>
 
         <div className="flex items-center justify-around gap-3 flex-wrap mt-6">

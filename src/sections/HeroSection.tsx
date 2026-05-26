@@ -161,7 +161,7 @@ export default function Hero() {
 	return (
 		<section
 			id="hero"
-			className="relative flex items-center pl-10 md:pl-15 pb-30 min-h-screen"
+			className="relative flex items-center justify-center px-5 sm:pl-10 md:pl-15 min-h-screen"
 		>
 			<HeroBackground />
 
@@ -169,14 +169,14 @@ export default function Hero() {
 			<div className="z-10">
 				<div>
 					<h1
-						className="text-[36px] md:text-4xl"
+						className="text-3xl sm:text-4xl md:text-4xl"
 						style={{ fontFamily: "Clash Display" }}
 					>
 						Abdallah Aziz
 					</h1>
-					<div className="mt-5 md:mt-0 text-6xl md:text-7xl lg:text-8xl flex flex-col">
+					<div className="mt-2 sm:mt-5 md:mt-0 text-4xl sm:text-5xl md:text-7xl lg:text-8xl flex flex-col">
 						<span>Front End Developer</span>
-						<span className="pl-10 md:pl-30">Web Designer</span>
+						<span className="sm:pl-10 md:pl-30">Web Designer</span>
 					</div>
 				</div>
 				{hobbies.map((h, i) => (

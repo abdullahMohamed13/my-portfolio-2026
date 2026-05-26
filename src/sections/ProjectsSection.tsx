@@ -14,7 +14,7 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 sm:mt-12 gap-10">
         {projects.map((proj, index) => (
-          <ProjectCard proj={proj} index={index} />
+          <ProjectCard proj={proj} key={index} />
         ))}
       </div>
 

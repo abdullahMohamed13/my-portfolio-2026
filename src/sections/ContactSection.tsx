@@ -2,7 +2,7 @@ import { toast } from 'sonner';
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 
-import AnimatedHeader from './../components/AnimatedHeader';
+import AnimatedHeader from '../components/AnimatedHeader';
 import { Button } from '@/components/ui/button';
 
 import { Mail, MessageSquare, Send, SendHorizontal } from 'lucide-react';
