@@ -1,24 +1,25 @@
+// Icons
 import { FaGithub, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa';
+// types
+import type { ProjectButtonProps, ProjectProps } from '@/types/ProjectProps';
 // Shadcn Components
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 // Custom Reusable Components
 import PixelTransition from "../react-bits/Animations/PixelTransition";
-import ProjectActionButton from "@/components/projects/ProjectActionButton";
-import type { ProjectProps } from '@/types/ProjectProps';
+import FlowButton from '../ui/flow-button';
 
-export default function ProjectCard({proj, index}: {proj: ProjectProps, index: number}) {
+// CTA button
+function ProjectButton({ ...props }: ProjectButtonProps) {
+	return <FlowButton text={props.text} icon={props.icon} href={props.href} bgColor={props.bgColor} />
+}
+
+export default function ProjectCard({proj}: {proj: ProjectProps}) {
     return (
-      <div key={index} className="relative bg-card text-card-foreground p-4 rounded-2xl flex flex-col items-center gap-4">
+      <div className="relative bg-card text-card-foreground p-4 rounded-2xl flex flex-col items-center gap-4">
               
         {/* Deployment Platform Badge */}
         <div className="absolute bg-popover text-xs top-6 right-6 z-2 p-1.5 flex gap-2 items-center rounded-lg">
@@ -72,38 +73,33 @@ export default function ProjectCard({proj, index}: {proj: ProjectProps, index: n
           ))}
         </div>
 
-        {/* Description */}
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger style={{color: proj.themeColor, cursor: 'pointer'}}>Description</AccordionTrigger>
-            <AccordionContent>
-              {proj.description}
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion >
+				{/* Description */}
+				<div className='text-[#222] text-center'>
+            {proj.description}
+				</div>
 
         {/*  CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="mt-auto flex justify-center gap-2">
           {/* Live App button */}
-          <ProjectActionButton
+          <ProjectButton
             text="App"
             href={proj.liveURL}
-            icon={<FaExternalLinkAlt />}
+            icon={FaExternalLinkAlt}
             bgColor={proj.themeColor}
           />
           {/* GitHub Repo button */}
-          <ProjectActionButton
+          <ProjectButton
             text="Repo"
             href={proj.githubURL}
-            icon={<FaGithub />}
+            icon={FaGithub}
             bgColor={proj.themeColor}
           />
           {/* Linkedin Post button */}
             {proj.linkedinPost && (
-              <ProjectActionButton
+              <ProjectButton
                 text="Post"
                 href={proj.linkedinPost}
-                icon={<FaLinkedin />}
+                icon={FaLinkedin}
                 bgColor={proj.themeColor}
               />
             )}

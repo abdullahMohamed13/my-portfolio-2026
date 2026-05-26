@@ -1,3 +1,5 @@
+import type { ComponentType } from 'react';
+
 export interface ProjectProps {
   title: string
   description: string
@@ -13,4 +15,11 @@ export interface ProjectProps {
   liveURL: string
   githubURL: string
   linkedinPost?: string
+}
+
+export interface ProjectButtonProps {
+    text: string
+    href: string
+    icon: ComponentType<{ className?: string; size?: number | string; color?: string; style?: React.CSSProperties }>
+    bgColor: string
 }
