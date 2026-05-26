@@ -14,7 +14,7 @@ export default function Testimonials() {
             })}
           </div>
             <Button className="mt-6 hover:text-primary/80 transition-colors duration-300" variant='link'>
-                <a className="text-lg sm:text-xl flex items-center gap-2" href="https://www.linkedin.com/in/abdallah-m-aziz/details/recommendations/">
+                <a className="text-lg sm:text-xl flex items-center gap-2 px-2" href="https://www.linkedin.com/in/abdallah-m-aziz/details/recommendations/">
                     <span className="underline">View more recommendations on LinkedIn</span>
                     <LuLink />
                 </a>

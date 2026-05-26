@@ -17,7 +17,7 @@ export default function Contact() {
     subject: '',
     message: '',
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState<'idle' | 'sending' | 'success'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -29,10 +29,12 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submitted !== 'idle') return;
     if (!isValidGmail(form.email)) {
       toast.error('Please enter a valid Gmail address ending with @gmail.com');
       return;
     }
+    setSubmitted('sending');
     emailjs.sendForm(
       'service_x4ha7bn',
       'template_q4kyjou',
@@ -40,15 +42,16 @@ export default function Contact() {
       '0zoGJUCb_5YDXPkDI'
     )
     .then(() => {
-        setSubmitted(true);
+        setSubmitted('success');
         setForm({ email: '', subject: '', message: '' });
-        setTimeout(() => setSubmitted(false), 5000);
+        setTimeout(() => setSubmitted('idle'), 5000);
 
         // Play this sound effect when the message is successfully sent
         playSound(ConfirmationSound)
 
         toast.success("Your message is successfully sent, I'll reach out to you soon <3");
 	}, () => {
+        setSubmitted('idle');
 		playSound(ErrorSound);
         toast.error('Failed to send your message, please try again.');
     });
@@ -123,12 +126,12 @@ export default function Contact() {
           <Button
             type="submit"
             className="mt-2 font-semibold bg-primary hover:bg-primary/80 focus:outline-none focus:ring-2"
-            disabled={submitted}
+            disabled={submitted !== 'idle'}
           >
             <div className='flex items-center gap-1'>
               <SendHorizontal />
               <span>
-                {submitted ? 'Sent!' : 'Send'}
+                {submitted === 'sending' ? 'Sending...' : submitted === 'success' ? 'Sent!' : 'Send'}
               </span>
             </div>
           </Button>

@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <footer
-      className="relative w-full border-t px-4 sm:px-0 py-8 pb-10 bg-cover bg-center bg-no-repeat"
+      className="relative w-full border-t px-4 sm:px-0 py-8 pb-18 md:pb-10 bg-cover bg-center bg-no-repeat"
     >
       <main className='flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-4 justify-around'>
 

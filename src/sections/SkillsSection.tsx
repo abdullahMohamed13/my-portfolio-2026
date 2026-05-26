@@ -19,7 +19,7 @@ import { languages, frameworks_libraries, styling_ui, backend, tools, planningTo
 import { playSound } from '@/utils/playSound';
 import ClickSound from '@/assets/sound/click.oga?url';
 
-const priorityOrder = ['React.Js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Bootstrap', 'PHP', 'MySQL'];
+const priorityOrder = ['React.Js', 'TypeScript', 'JavaScript', 'Tailwind CSS', "Next.Js", 'Bootstrap', 'PHP', 'MySQL'];
 
 const allSkills = [...languages, ...frameworks_libraries, ...styling_ui, ...backend, ...tools]
     // remove duplicated skills items

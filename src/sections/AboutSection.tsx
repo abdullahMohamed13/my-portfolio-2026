@@ -1,11 +1,10 @@
+import { internships } from "@/data/internships";
 // custom components
 import { Separator } from "../components/Separator";
 import AnimatedHeader from "../components/AnimatedHeader"
 // shadcn/ui
 import { Badge } from "@/components/ui/badge";
-import { SiNextdotjs }from 'react-icons/si';
 import TrueFocus from "@/components/react-bits/TextAnimations/TrueFocus";
-import { internships } from "@/data/internships";
 
 export default function About() {
   return (
@@ -42,7 +41,7 @@ export default function About() {
                   alt={internship.company.name}
                   className="border-(--brand-color) p-0.5 w-32 h-32 rounded-full border-4 sm:border-transparent group-hover:border-(--brand-color) object-contain mx-auto hover:scale-110 transition-all duration-300"
                 />
-                <h4 className="text-lg group-hover:text-(--brand-color) transition-colors font-semibold mt-2">{internship.company.name}</h4>
+                <p className="md:text-lg group-hover:text-(--brand-color) transition-colors font-semibold mt-2">{internship.company.name}</p>
               </a>
             );
           })}
@@ -67,9 +66,9 @@ export default function About() {
               animationDuration={2}
               pauseBetweenAnimations={2}
             >
-              <Badge className="bg-car text-sm sm:text-lg">
-                NextJS
-                <SiNextdotjs className=" ml-1" size={28}/>
+              <Badge className="bg-card text-sm sm:text-lg">
+              	Laravel
+                <img src='/skills/laravel.svg' className="h-6 ml-1" />
               </Badge>
               <Badge className="bg-card text-sm sm:text-lg">
                 Jest
