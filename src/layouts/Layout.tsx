@@ -13,9 +13,9 @@ export default function Layout() {
             className="flex flex-col min-h-screen selection:bg-primary selection:text-white"
         >
             <ScrollToTopComponent />
-            <main className="grow">
+            <div>
                 <Outlet />
-            </main>
+            </div>
 				 {showFooter && <Footer />}
         </FadeInOnScroll>
     )

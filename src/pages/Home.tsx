@@ -1,25 +1,23 @@
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 // sections
-import Hero from "@/sections/Hero";
-const Projects = lazy(() => import("../sections/Projects"));
-const About = lazy(() => import("../sections/About"));
-const Skills = lazy(() => import("../sections/Skills"));
-const Testimonials = lazy(() => import("../sections/Testimonials"));
-const Contact = lazy(() => import("../sections/Contact"));
+import Hero from "@/sections/HeroSection";
+const About = lazy(() => import("../sections/AboutSection"));
+const Testimonials = lazy(() => import("../sections/TestimonialsSection"));
+const Skills = lazy(() => import("../sections/SkillsSection"));
+const Projects = lazy(() => import("../sections/ProjectsSection"));
+const Contact = lazy(() => import("../sections/ContactSection"));
 // Components
-import FadeInOnScroll from "../components/FadeInOnScroll";
 import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
-import { Helmet } from "react-helmet-async";
-// import { playSound } from "@/utils/playSound";
-// import LoginSound from "@/assets/sound/login.oga?url"
+import FadeInOnScroll from "../components/FadeInOnScroll";
 
 export default function App() {
 	
   return (
     <>
       <Helmet>
-        <title>Abdallah Aziz | Front-end React Developer</title>
+        <title>Abdallah Aziz | Front-end Developer | Software Engineer</title>
         <meta
           name="description"
           content="Frontend developer skilled in React, TypeScript & Tailwind. I build pixel-perfect, responsive web apps with clean code & smooth UX."
