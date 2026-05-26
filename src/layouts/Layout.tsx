@@ -4,7 +4,10 @@ import ScrollToTopComponent from '../components/ScrollToTopComponent';
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 export default function Layout() {
-    return ( 
+	const knownPaths = ['/', '/resume'];
+	const showFooter = knownPaths.includes(location.pathname);
+	
+	return ( 
         <FadeInOnScroll
             direction="down"
             className="flex flex-col min-h-screen selection:bg-primary selection:text-white"
@@ -13,7 +16,7 @@ export default function Layout() {
             <main className="grow">
                 <Outlet />
             </main>
-            <Footer />
+				 {showFooter && <Footer />}
         </FadeInOnScroll>
     )
 }
