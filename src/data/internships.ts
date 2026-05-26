@@ -12,6 +12,15 @@ interface InternshipProps {
 export const internships: InternshipProps[] = [
  {
   id: 1,
+  href: "https://www.mckinsey.org/home",
+  company: {
+   name: "McKinsey.org",
+   logo: "/internships/mckinsey.png",
+   color: "#2350FF",
+  },
+ },
+ {
+  id: 2,
   href: "https://gizasystems.com/",
   company: {
    name: "Giza Systems",
@@ -20,7 +29,16 @@ export const internships: InternshipProps[] = [
   },
  },
  {
-  id: 2,
+  id: 3,
+  href: "https://www.facebook.com/IEEE.ElShoroukAcademy.SB",
+  company: {
+   name: "IEEE SHA",
+   logo: "/internships/ieee.png",
+   color: "#006597",
+  },
+ },
+ {
+  id: 4,
   href: "https://eyouthlearning.com/",
   company: {
    name: "EYouth",
@@ -29,16 +47,7 @@ export const internships: InternshipProps[] = [
   },
  },
  {
-  id: 3,
-  href: "https://www.facebook.com/IEEE.ElShoroukAcademy.SB",
-  company: {
-   name: "IEEE",
-   logo: "/internships/ieee.webp",
-   color: "#006EB5",
-  },
- },
- {
-  id: 4,
+  id: 5,
   href: "https://huma-volve.com/company-profile/",
   company: {
    name: "Huma Volve",
@@ -47,7 +56,7 @@ export const internships: InternshipProps[] = [
   },
  },
  {
-  id: 5,
+  id: 6,
   href: "https://www.linkedin.com/company/108834010/",
   company: {
    name: "Afaaq Ware",
