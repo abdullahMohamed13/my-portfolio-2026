@@ -1,12 +1,12 @@
 import { toast } from 'sonner';
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
-
+// Components
 import AnimatedHeader from '../components/AnimatedHeader';
 import { Button } from '@/components/ui/button';
-
+// Icons
 import { Mail, MessageSquare, Send, SendHorizontal } from 'lucide-react';
-
+// Sounds
 import { playSound } from '@/utils/playSound';
 import ConfirmationSound from '@/assets/sound/notification.oga?url'
 import ErrorSound from '@/assets/sound/error.oga?url'
@@ -36,10 +36,10 @@ export default function Contact() {
     }
     setSubmitted('sending');
     emailjs.sendForm(
-      'service_x4ha7bn',
-      'template_q4kyjou',
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       e.currentTarget,
-      '0zoGJUCb_5YDXPkDI'
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then(() => {
         setSubmitted('success');
