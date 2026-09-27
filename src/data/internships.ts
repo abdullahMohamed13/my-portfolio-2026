@@ -6,7 +6,6 @@ interface InternshipProps {
   logo: string;
   color: string;
  };
- // duration: string;
 }
 
 export const internships: InternshipProps[] = [
@@ -19,15 +18,6 @@ export const internships: InternshipProps[] = [
    color: "#2350FF",
   },
  },
- // {
- //  id: 2,
- //  href: "https://developers.google.com/community/experts/",
- //  company: {
- //   name: "Google Dev Experts",
- //   logo: "/companies/google-developer.png",
- //   color: "#EA4335",
- //  },
- // },
  {
   id: 2,
   href: "https://gizasystems.com/",
@@ -74,3 +64,13 @@ export const internships: InternshipProps[] = [
   },
  },
 ];
+
+// {
+//  id: 7,
+//  href: "https://developers.google.com/community/experts/",
+//  company: {
+//   name: "Google Dev Experts",
+//   logo: "/companies/google-developer.png",
+//   color: "#EA4335",
+//  },
+// },
