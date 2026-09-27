@@ -5,7 +5,7 @@ export interface ProjectProps {
   description: string
   imgSrc: string
   projectInSite?: string
-  deploymentPlatform: 'Netlify' | 'Render' | 'Github Pages'
+  deploymentPlatform?: 'Netlify' | 'Render' | 'Github Pages' | 'Vercel'
   stack: string[]
   themeColor: string
   stackIcons: {
