@@ -57,21 +57,19 @@ export default function Contact() {
     });
   };
 
-  const inputStyle = 'rounded-lg px-3 py-2 bg-background border placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent transition'
-
   return (
     <section id="contact" className="flex-section-center px-4 section-padding">
       <div className='flex items-center justify-center flex-col gap-0 mb-3'>
         <AnimatedHeader text='Contact Me'/>
         <h3 className='sub-heading'>
-          /* Let's Have A Conversation! */
+          /* Let's Have a Convo! */
         </h3>
       </div>
 
       <div className="flex flex-col gap-6 w-full max-w-xl bg-card rounded-2xl shadow-xl p-8">
-        <p className="text-base text-destructive font-medium -mt-2">
+        {/*<p className="text-base text-destructive font-medium -mt-2">
           Kindly enter a valid gmail address to ensure I can get back to you.
-        </p>
+        </p>*/}
 
         <form className="flex flex-col gap-4 *:flex *:flex-col *:gap-1" onSubmit={handleSubmit}>
 
@@ -86,7 +84,7 @@ export default function Contact() {
               value={form.email}
               onChange={handleChange}
               required
-              className={inputStyle}
+              className="contact-input"
               placeholder="you@email.com"
             />
           </label>
@@ -102,7 +100,7 @@ export default function Contact() {
               value={form.subject}
               onChange={handleChange}
               required
-              className={inputStyle}
+              className="contact-input"
               placeholder="What would you like to talk about?"
             />
           </label>
@@ -118,7 +116,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               rows={5}
-              className={`${inputStyle} resize-none`}
+              className="contact-input resize-none"
               placeholder="Write your message here..."
             />
           </label>

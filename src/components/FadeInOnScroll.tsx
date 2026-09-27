@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
 
 type Direction = "left" | "right" | "up" | "down";
 
 interface FadeInOnScrollProps {
   children: React.ReactNode;
   direction?: Direction;
-  className?: string;
+	className?: string;
+  style?: CSSProperties
 }
 
-export default function FadeInOnScroll({ children, direction = "up", className }: FadeInOnScrollProps) {
+export default function FadeInOnScroll({ children, direction = "up", className, style }: FadeInOnScrollProps) {
   
   const directions = {
     up: { opacity: 0, y: 40, x: 0 },
@@ -29,7 +31,8 @@ export default function FadeInOnScroll({ children, direction = "up", className }
         duration: 0.6, 
         ease: [0.25, 0.1, 0.25, 1]
       }}
-      className={`scroll-mt-20 ${className}`}
+			className={`scroll-mt-20 ${className}`}
+      style={style}
     >
       {children}
     </motion.section>

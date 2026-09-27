@@ -32,13 +32,13 @@ export default function Resume() {
                 />
                 <div className='absolute bottom-0.5 sm:bottom-1.5 left-1/2 -translate-x-1/2'>
                     <Button asChild className='mr-2 bg-accent'>
-                        <a href='/pdf-files/Abdallah_Aziz-Frontend-Developer.pdf' rel="noopener noreferrer" title='Open Resume'>
+                        <a href='/pdf-files/Abdallah Aziz | Frontend Developer.pdf' rel="noopener noreferrer" title='Open Resume'>
                             <FiEye />
                             <span className='hidden sm:block'>Open</span>
                         </a>
                     </Button>
                     <Button asChild className='bg-accent'>
-                        <a href='/pdf-files/Abdallah_Aziz-Frontend-Developer.pdf' download title='Download Resume'>
+                        <a href='/pdf-files/Abdallah Aziz | Frontend Developer.pdf' download title='Download Resume'>
                             <FiDownload />
                             <span className='hidden sm:block'>Download</span>
                         </a>
