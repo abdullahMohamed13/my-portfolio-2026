@@ -1,13 +1,12 @@
 import { socialMedia } from "@/data/social-media";
-import { GiTalk, GiEarthAsiaOceania } from "react-icons/gi";
+import { GiTalk } from "react-icons/gi";
 
-function Footer() {
-
+export default function Footer() {
   return (
     <footer
-      className="relative w-full border-t px-4 sm:px-0 py-8 pb-18 md:pb-10 bg-cover bg-center bg-no-repeat"
+      className="relative w-full border-t px-4 sm:px-0 py-8 pb-18 md:pb-10"
     >
-      <main className='flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-4 justify-around'>
+      <div className='flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-4 justify-around'>
 
         {/* left section */}
         <div className='flex gap-3'>
@@ -33,18 +32,10 @@ function Footer() {
                 })}
             </div>
           </div>
-          <div className='flex-center text-black'>
-            <p className='text-md flex items-center gap-1.5'><GiEarthAsiaOceania className='sm:text-primary' /> Location</p>
-            <p className='flex gap-2 items-center'>
-              Cairo, Egypt
-              <img title='Egypt' src='egypt.svg' className='h-6' alt='Egyptian Flag' />
-            </p>
-          </div>
         </div>
-      </main>
-      <div className="text-base text-black mt-8 sm:text-xl text-center *:leading-5.5">
-        <p className='text-sm mb-1'>©2026 Abdallah Aziz - All Rights Reserved</p>
-      </div>
+			</div>
+      
+      <p className='mt-8 text-center font-light text-sm leading-5.5 mb-1'>©2026 Abdallah Aziz - All Rights Reserved</p>
   
     {/* Bottom section */}
       {/* <div className='mt-4 [max-width:300px]:hidden'>
@@ -56,5 +47,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;
