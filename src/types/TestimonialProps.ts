@@ -1,3 +1,5 @@
+export type TestimonialCategory = 'team' | 'leaders' | 'clients' | 'students';
+
 export interface TestimonialProps {
     id: number,
     name: string,
