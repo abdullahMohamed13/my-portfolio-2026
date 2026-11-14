@@ -1,0 +1,67 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #eee9dc;
+  --foreground: #191916;
+  --card: #f9f6ed;
+  --card-foreground: #191916;
+  --popover: #f9f6ed;
+  --popover-foreground: #191916;
+  --primary: #007bff;
+  --primary-foreground: #ffffff;
+  --secondary: #d8d0be;
+  --secondary-foreground: #191916;
+  --muted: #e3dccb;
+  --muted-foreground: #66645d;
+  --accent: #fdbd04;
+  --accent-foreground: #191916;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(25, 25, 22, 0.22);
+  --input: #f9f6ed;
+  --ring: #007bff;
+  --radius: 0.5rem;
+  --tracking-normal: -0.025em;
+  --spacing: 0.25rem;
+
+  --type-display: 'Black Ops One', Impact, sans-serif;
+  --type-body: 'Manrope', sans-serif;
+  --type-label: 'Manrope', sans-serif;
+  --color-paper: var(--background);
+  --color-ink: var(--foreground);
+  --color-muted: var(--muted-foreground);
+  --color-blue: var(--primary);
+  --color-yellow: var(--accent);
+  --color-rule: var(--border);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: var(--type-display);
+  --font-heading: var(--type-display);
+  --font-sans: var(--type-body);
+  --font-mono: var(--type-label);
+  --font-nippo: var(--type-body);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
