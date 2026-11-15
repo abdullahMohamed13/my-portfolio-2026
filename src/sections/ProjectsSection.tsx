@@ -5,7 +5,7 @@ export default function ProjectsSection() {
     <section className="portfolio-section" id="projects">
       <div className="mb-14 grid grid-cols-[1fr_auto] items-end gap-6 max-[760px]:grid-cols-1">
         <p className="portfolio-eyebrow col-span-full mb-0">01 / Selected work</p>
-        <h2 className="portfolio-title">Things I helped<br /><em className="portfolio-title-accent not-italic">bring to life.</em></h2>
+        <h2 data-motion="project-title" className="portfolio-title">Things I helped<br /><em className="portfolio-title-accent not-italic">bring to life.</em></h2>
         <p className="mb-2 max-w-[16.25rem] leading-relaxed text-muted-foreground max-[760px]:mb-0">Real products, real constraints, thoughtful frontend work.</p>
       </div>
       <div className="grid gap-20">

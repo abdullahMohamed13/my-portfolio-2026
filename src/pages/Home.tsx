@@ -9,32 +9,47 @@ import GitHubProofSection from '@/sections/GitHubProofSection';
 import TestimonialsSection from '@/sections/TestimonialsSection';
 import ContactIntroSection from '@/sections/ContactIntroSection';
 import ContactSection from '@/sections/ContactSection';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const pageRef = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {
     const page = pageRef.current;
-    if (!page || !('IntersectionObserver' in window)) return;
+    if (!page) return;
 
-    const targets = page.querySelectorAll<HTMLElement>('section, article');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -7% 0px' },
-    );
+    const mm = gsap.matchMedia(page);
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.fromTo('[data-motion="hero-title"]',
+        { yPercent: 18, rotateX: -18, transformPerspective: 900, opacity: 0 },
+        { yPercent: 0, rotateX: 0, opacity: 1, duration: 1.15, ease: 'power3.out', delay: 0.12 },
+      );
 
-    targets.forEach((target) => {
-      target.classList.add('scroll-reveal');
-      observer.observe(target);
+      gsap.fromTo('[data-motion="project-title"]',
+        { yPercent: 30, rotateX: -24, transformPerspective: 1100, transformOrigin: '50% 100%', opacity: 0.35 },
+        { yPercent: 0, rotateX: 0, opacity: 1, ease: 'none', scrollTrigger: {
+          trigger: '#projects', start: 'top 72%', end: 'top 18%', scrub: 0.7,
+        } },
+      );
+
+      gsap.fromTo('#projects article',
+        { y: 90, rotateX: 8, transformPerspective: 1200, opacity: 0 },
+        { y: 0, rotateX: 0, opacity: 1, stagger: 0.16, ease: 'power2.out',
+          scrollTrigger: { trigger: '#projects article:first-of-type', start: 'top 82%', end: 'top 48%', scrub: 0.8 } },
+      );
+
+      gsap.fromTo('[data-motion="approach-title"]',
+        { rotateY: -10, z: -90, x: -30, opacity: 0.45, transformPerspective: 1000 },
+        { rotateY: 0, z: 0, x: 0, opacity: 1, ease: 'none', scrollTrigger: {
+          trigger: '#approach', start: 'top 78%', end: 'top 22%', scrub: 0.8,
+        } },
+      );
     });
 
-    return () => observer.disconnect();
+    return () => mm.revert();
   }, []);
 
   return (
