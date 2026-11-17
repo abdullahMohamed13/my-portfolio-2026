@@ -1,0 +1,227 @@
+/* Horizon hero — full-screen cosmic scroll scene */
+
+.hero-container {
+  --scene-bg: #06070d;
+  --scene-ink: #f4f2ec;
+  --scene-dim: rgba(244, 242, 236, 0.62);
+  --scene-line: rgba(244, 242, 236, 0.18);
+
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+  /* Reserve the first screen so the pinned canvas does not change the layout */
+  padding-top: 100vh;
+  padding-top: 100svh;
+  background: var(--scene-bg);
+  color: var(--scene-ink);
+  font-family: var(--type-body);
+}
+
+/* WebGL canvas: fills the first screen and stays pinned while the story scrolls */
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  background: var(--scene-bg);
+}
+
+.hero-container.is-pinned .hero-canvas {
+  position: fixed;
+}
+
+/* First screen overlay */
+.hero-content {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(1.25rem, 2.4vh, 2.25rem);
+  height: 100vh;
+  height: 100svh;
+  padding: clamp(5rem, 14vh, 9rem) clamp(1.5rem, 5vw, 4rem) clamp(6rem, 14vh, 9rem);
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Soft scrim keeps the copy legible over the brightest part of the scene */
+.hero-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(52% 46% at 50% 52%, rgba(4, 5, 12, 0.6), rgba(4, 5, 12, 0));
+  pointer-events: none;
+}
+
+.hero-title {
+  margin: 0;
+  color: var(--scene-ink);
+  font-family: var(--type-display);
+  font-size: clamp(3.5rem, 13.5vw, 11rem);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 70px rgba(0, 123, 255, 0.45),
+    0 22px 70px rgba(0, 0, 0, 0.6);
+}
+
+.title-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.hero-subtitle {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+  max-width: 46ch;
+  margin: 0;
+}
+
+.hero-subtitle .subtitle-line {
+  margin: 0;
+  color: var(--scene-dim);
+  font: 500 clamp(0.66rem, 0.85vw, 0.78rem) / 1.9 var(--type-body);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
+}
+
+.cosmos-subtitle .subtitle-line:first-child {
+  color: var(--scene-ink);
+}
+
+/* Side menu */
+.side-menu {
+  position: absolute;
+  z-index: 3;
+  top: clamp(1.5rem, 4.5vh, 2.75rem);
+  left: clamp(1.25rem, 4vw, 2.75rem);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  pointer-events: none;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+}
+
+.menu-icon span {
+  height: 2px;
+  background: var(--scene-ink);
+  opacity: 0.85;
+}
+
+.menu-icon span:nth-child(2) {
+  width: 70%;
+}
+
+.vertical-text {
+  color: var(--scene-dim);
+  font: 600 0.6rem/1 var(--type-body);
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+/* Keep the HUD in the viewport while the scene is pinned */
+.hero-container.is-pinned .side-menu {
+  position: fixed;
+  z-index: 3;
+}
+
+/* Scroll indicator */
+.scroll-progress {
+  position: absolute;
+  z-index: 3;
+  inset-inline: 0;
+  bottom: clamp(1.5rem, 4.5vh, 2.75rem);
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  width: min(300px, 64vw);
+  margin-inline: auto;
+  pointer-events: none;
+}
+
+.hero-container.is-pinned .scroll-progress {
+  position: fixed;
+}
+
+.scroll-text {
+  color: var(--accent);
+  font: 600 0.6rem/1 var(--type-body);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+.progress-track {
+  width: 100%;
+  height: 2px;
+  background: var(--scene-line);
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  box-shadow: 0 0 14px rgba(0, 123, 255, 0.75);
+  transition: width 120ms linear;
+}
+
+.section-counter {
+  color: var(--scene-dim);
+  font: 500 0.62rem/1 var(--type-body);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.24em;
+}
+
+/* Story panels that scroll over the pinned canvas */
+.scroll-sections {
+  position: relative;
+  z-index: 1;
+}
+
+.content-section {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(1rem, 2vh, 1.5rem);
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(6rem, 14vh, 10rem) clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.content-section::before {
+  content: '';
+  position: absolute;
+  inset: 12% 0;
+  z-index: -1;
+  background: radial-gradient(60% 55% at 50% 50%, rgba(6, 7, 13, 0.72), rgba(6, 7, 13, 0));
+  pointer-events: none;
+}
+
+.content-section .hero-title {
+  font-size: clamp(2.75rem, 9vw, 7.5rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill {
+    transition: none;
+  }
+}
