@@ -1,53 +1,51 @@
 import { ArrowRight } from "pixelarticons/react";
 import HeroArtwork from "@/components/HeroArtwork";
+import { CartoonButton } from "@/components/ui/cartoon-button";
 
 export default function HeroSection() {
 	return (
 		<section
 			id="hero"
-			className="relative flex min-h-[min(810px,calc(100svh-4.75rem))] flex-col justify-between overflow-hidden bg-background px-[clamp(1.375rem,6vw,5.75rem)] py-7 max-[760px]:min-h-[95svh]"
+			className="relative flex h-screen flex-col justify-between overflow-hidden bg-background px-[clamp(1.375rem,6vw,5.75rem)] pt-[calc(60px+1.75rem)] max-[760px]:h-[100svh] max-[760px]:px-4"
 		>
-			<HeroArtwork />
-
-			<div className="relative z-10 flex justify-between gap-4 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-muted-foreground max-[760px]:[&>span:last-child]:hidden">
+			<div className="relative z-10 flex shrink-0 justify-between gap-4 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-muted-foreground max-[760px]:[&>span:last-child]:hidden">
 				<span className="uppercase">
-					Frontend Developer / Contributor / Mentor
+					Frontend Developer | Contributor | Mentor
 				</span>
 				<span>Cairo, Egypt · Available for freelancing</span>
 			</div>
 
-			<div className="relative z-10 w-[min(760px,72%)] py-[clamp(4rem,8vh,5.3rem)] max-[760px]:w-full max-[760px]:py-20">
-				<p className="portfolio-eyebrow">
-					<i className="mr-2 inline-block h-2 w-2 rotate-45 border border-foreground bg-accent align-middle" />{" "}
-					Independent developer, team contributor
-				</p>
-				<h1 data-motion="hero-title" className="portfolio-title text-[clamp(3.375rem,9vw,8.25rem)] max-[760px]:text-[clamp(3rem,13vw,5.375rem)]">
-					I build products
-					<br />
-					meant to be{" "}
-					<em className="portfolio-title-accent not-italic">used.</em>
-				</h1>
-				<p className="mt-7 max-w-[32rem] text-[clamp(1rem,1.5vw,1.25rem)] leading-relaxed text-[#42413a]">
-					I care about the whole arc: a rough requirement, the conversations with
-					designers and backend developers, the implementation, and the small
-					passes that make the result feel finished. Most of my work has been on
-					products that ship and get used, not isolated features.
-				</p>
-				<p className="mt-4 max-w-[32rem] text-[clamp(1rem,1.5vw,1.25rem)] leading-relaxed text-[#42413a]">
-					To me, good frontend work starts with understanding how people move
-					through a product—and ends with code the next developer can follow
-					without a walkthrough.
-				</p>
-				<a
-					className="mt-8 inline-flex items-center gap-5 border-2 border-foreground bg-accent px-5 py-4 font-mono text-xs uppercase text-foreground shadow-[4px_4px_0_var(--foreground)] transition hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-[1px_1px_0_var(--foreground)]"
+			<div className="relative z-10 isolate flex min-h-0 flex-1 items-end justify-center">
+				<div className="relative isolate z-0 aspect-[1158/1358] max-h-full max-[760px]:w-[min(90%,54svh)]">
+					<div
+						aria-hidden="true"
+						className="absolute left-1/2 top-[60%] -z-10 aspect-square w-[min(65%,100cqw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary"
+					/>
+					<img
+						className="relative z-10 h-full w-full object-contain object-bottom"
+						src="/me-hero.png"
+						alt="Abdallah Aziz"
+					/>
+				</div>
+				<HeroArtwork />
+				<CartoonButton
+					label="Explore selected work"
 					href="#projects"
-				>
-					Explore selected work <ArrowRight aria-hidden="true" />
-				</a>
+					icon={<ArrowRight aria-hidden="true" />}
+					color="bg-accent"
+					wrapperClassName="absolute left-0 bottom-[clamp(4.5rem,10vh,7rem)] z-20 font-mono text-xs uppercase max-[760px]:bottom-auto max-[760px]:top-2 max-[760px]:left-1/2 max-[760px]:w-max max-[760px]:-translate-x-1/2"
+				/>
 			</div>
-			<div className="relative z-10 flex justify-between border-t border-border pt-3.5 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-muted-foreground max-[760px]:text-[0.5rem]">
-				<span>Design / Code / Collaboration</span>
-			</div>
+
+			{/*<div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 border-t border-foreground/25">
+				<div className="flex w-full items-baseline justify-between gap-[0.15em] px-[clamp(0.5rem,1.2vw,1rem)] font-display text-[clamp(1.75rem,6.5vw,6.25rem)] font-black uppercase leading-[0.72] tracking-[-0.085em] text-foreground [text-shadow:0.035em_0.035em_0_var(--color-primary)] max-[760px]:text-[clamp(1rem,5.4vw,3.5rem)]">
+					<span className="-rotate-[2deg] origin-left">Design</span>
+					<span className="text-primary">/</span>
+					<span className="translate-y-[0.05em]">Code</span>
+					<span className="text-primary">/</span>
+					<span className="rotate-[1.5deg] origin-right">Collaboration</span>
+				</div>
+			</div>*/}
 		</section>
 	);
 }
