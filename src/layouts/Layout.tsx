@@ -6,7 +6,7 @@ export default function Layout() {
 	return ( 
         <FadeInOnScroll
             direction="down"
-            className="flex flex-col min-h-screen selection:bg-primary selection:text-white"
+            className="flex flex-col min-h-screen selection:bg-accent selection:text-white"
         >
             <ScrollToTopComponent />
             <div>
