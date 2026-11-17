@@ -9,6 +9,8 @@ import GitHubProofSection from '@/sections/GitHubProofSection';
 import TestimonialsSection from '@/sections/TestimonialsSection';
 import ContactIntroSection from '@/sections/ContactIntroSection';
 import ContactSection from '@/sections/ContactSection';
+import LinkedInSection from '@/sections/LinkedInSection';
+import HorizonSection from '@/components/ui/horizon-hero-section';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -57,12 +59,16 @@ export default function Home() {
       <SeoHelmet />
       <NavBar />
       <HeroSection />
+      <HorizonSection />
       <ProjectsSection />
       <ApproachSection />
       <GitHubProofSection />
+      <LinkedInSection />
       <TestimonialsSection />
       <ContactIntroSection />
-      <div className="bg-background px-5 pb-[5.625rem] [&_section]:pt-6"><ContactSection /></div>
+			<div className="bg-background px-5 pb-[5.625rem] [&_section]:pt-6">
+				<ContactSection />
+			</div>
       <Footer />
     </main>
   );
