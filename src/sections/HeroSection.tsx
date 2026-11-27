@@ -36,16 +36,6 @@ export default function HeroSection() {
 					wrapperClassName="absolute left-0 bottom-[clamp(4.5rem,10vh,7rem)] z-20 font-mono text-xs uppercase max-[760px]:bottom-auto max-[760px]:top-2 max-[760px]:left-1/2 max-[760px]:w-max max-[760px]:-translate-x-1/2"
 				/>
 			</div>
-
-			{/*<div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 border-t border-foreground/25">
-				<div className="flex w-full items-baseline justify-between gap-[0.15em] px-[clamp(0.5rem,1.2vw,1rem)] font-display text-[clamp(1.75rem,6.5vw,6.25rem)] font-black uppercase leading-[0.72] tracking-[-0.085em] text-foreground [text-shadow:0.035em_0.035em_0_var(--color-primary)] max-[760px]:text-[clamp(1rem,5.4vw,3.5rem)]">
-					<span className="-rotate-[2deg] origin-left">Design</span>
-					<span className="text-primary">/</span>
-					<span className="translate-y-[0.05em]">Code</span>
-					<span className="text-primary">/</span>
-					<span className="rotate-[1.5deg] origin-right">Collaboration</span>
-				</div>
-			</div>*/}
 		</section>
 	);
 }

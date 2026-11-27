@@ -22,3 +22,11 @@ export const navItems = [
     { icon: <MdOutlineRateReview size={18} />, label: 'Testimonials', onClick: () => scrollToSection('testimonials')},
     { icon: <BiEnvelope size={18} />, label: 'Contact', onClick: () => scrollToSection('contact')},
 ];
+
+/** Full menu items for the kinetic gate navigation. */
+export const kineticNavItems = [
+    { label: 'Work', href: '#projects', meta: 'Selected projects', shape: 1 },
+    { label: 'Approach', href: '#approach', meta: 'How I build', shape: 2 },
+    { label: 'Proof', href: '#proof', meta: 'GitHub & testimonials', shape: 3 },
+    { label: 'Contact', href: '#contact', meta: 'Start a conversation', shape: 4 },
+] as const;
