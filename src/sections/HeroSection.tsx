@@ -21,7 +21,7 @@ export default function HeroSection() {
 					<i className="mr-2 inline-block h-2 w-2 rotate-45 border border-foreground bg-accent align-middle" />{" "}
 					Independent developer, team contributor
 				</p>
-				<h1 data-motion="hero-title" className="portfolio-title text-[clamp(3.375rem,9vw,8.25rem)] max-[760px]:text-[clamp(3rem,13vw,5.375rem)]">
+				<h1 className="portfolio-title text-[clamp(3.375rem,9vw,8.25rem)] max-[760px]:text-[clamp(3rem,13vw,5.375rem)]">
 					I build products
 					<br />
 					meant to be{" "}
