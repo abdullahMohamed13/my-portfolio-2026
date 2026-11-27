@@ -418,7 +418,6 @@ class LiquidEngine {
   private presence = 0
   private presenceTarget = 0
   private burst = 0
-  private lastInput = -1e9
   private settle = 1e9
   private touchRelease = 0
 
@@ -735,7 +734,6 @@ class LiquidEngine {
     this.target.x = x
     this.target.y = y
     this.presenceTarget = 1
-    this.lastInput = now
     this.settle = 0
     if (type === "down") {
       this.burst = 1

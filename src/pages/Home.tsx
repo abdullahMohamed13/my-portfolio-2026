@@ -10,7 +10,7 @@ import GitHubProofSection from '@/sections/GitHubProofSection';
 import TestimonialsSection from '@/sections/TestimonialsSection';
 import ContactSection from '@/sections/ContactSection';
 import LinkedInSection from '@/sections/LinkedInSection';
-import FaqSection from '@/sections/FaqSection';
+// import FaqSection from '@/sections/FaqSection';
 import HorizonSection from '@/components/ui/horizon-hero-section';
 import gsap from 'gsap';
 import ContactIntroSection from '@/sections/ContactIntroSection';
