@@ -64,7 +64,7 @@ export default function Contact() {
         <h2 className="m-0 font-display text-[clamp(2.125rem,5vw,3.75rem)] text-foreground">Let’s talk</h2>
       </div>
 
-      <div className="flex w-full max-w-xl flex-col gap-6 rounded-none border border-foreground bg-card p-8 shadow-[6px_6px_0_var(--foreground)]">
+      <div className="flex w-full max-w-xl flex-col gap-6 rounded-none border border-primary bg-card p-8 shadow-[6px_6px_0_var(--primary)]">
 
         <WatchingFace isTyping={isTyping} />
 
