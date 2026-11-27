@@ -1,54 +1,59 @@
-import { useLayoutEffect, useRef } from 'react';
-import { SeoHelmet } from '@/components/SeoHelmet';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
-import HeroSection from '@/sections/HeroSection';
-import ProjectsSection from '@/sections/ProjectsSection';
-import ApproachSection from '@/sections/ApproachSection';
-import GitHubProofSection from '@/sections/GitHubProofSection';
-import TestimonialsSection from '@/sections/TestimonialsSection';
-import ContactIntroSection from '@/sections/ContactIntroSection';
-import ContactSection from '@/sections/ContactSection';
+// sections
+import Hero from "@/sections/HeroSection";
+import About from "@/sections/AboutSection";
+import Testimonials from "@/sections/TestimonialsSection";
+import Skills from "@/sections/SkillsSection";
+import Projects from "@/sections/ProjectsSection";
+import Contact from "@/sections/ContactSection";
+// Components
+import Header from "@/components/Header";
+import NavBar from "@/components/NavBar";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { SeoHelmet } from "@/components/SeoHelmet";
 
-export default function Home() {
-  const pageRef = useRef<HTMLElement>(null);
-
-  useLayoutEffect(() => {
-    const page = pageRef.current;
-    if (!page || !('IntersectionObserver' in window)) return;
-
-    const targets = page.querySelectorAll<HTMLElement>('section, article');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -7% 0px' },
-    );
-
-    targets.forEach((target) => {
-      target.classList.add('scroll-reveal');
-      observer.observe(target);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
+export default function App() {
   return (
-    <main className="portfolio-frame" ref={pageRef}>
-      <SeoHelmet />
-      <NavBar />
-      <HeroSection />
-      <ProjectsSection />
-      <ApproachSection />
-      <GitHubProofSection />
-      <TestimonialsSection />
-      <ContactIntroSection />
-      <div className="bg-background px-5 pb-[5.625rem] [&_section]:pt-6"><ContactSection /></div>
-      <Footer />
-    </main>
+		<>
+			{/*SEO info*/}
+    	<SeoHelmet />
+
+			<FadeInOnScroll
+				direction="left"
+				// className="relative"
+				// style={{
+				// 	backgroundImage: `url("/backgrounds/1.jpg")`,
+				// 	backgroundSize: "cover",
+				// 	backgroundPosition: "center"
+				// }}
+			>
+				{/*<div className='absolute inset-0 bg-popover/80' />*/}
+				<Header />
+   			<Hero />
+			</FadeInOnScroll>
+      
+      <div className="max-w-7xl mx-auto">
+				<NavBar />
+        
+        <FadeInOnScroll direction="left">
+          <About />
+				</FadeInOnScroll>
+        
+        <FadeInOnScroll direction="down">
+          <Testimonials />
+				</FadeInOnScroll>
+        
+        <FadeInOnScroll direction="up">
+          <Projects />
+				</FadeInOnScroll>
+        
+        <FadeInOnScroll direction="left">
+          <Skills />
+				</FadeInOnScroll>
+        
+        <FadeInOnScroll direction="left">
+          <Contact />
+        </FadeInOnScroll>
+      </div>
+    </>
   );
 }
