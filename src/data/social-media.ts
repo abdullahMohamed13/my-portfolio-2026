@@ -1,5 +1,13 @@
 
-export const socialMedia = [
+export type SocialMediaItem = {
+    id: number;
+    name: string;
+    designation: string;
+    image: string;
+    href: string;
+};
+
+export const socialMedia: SocialMediaItem[] = [
     {
         id: 0,
         name: "GitHub",
@@ -29,3 +37,7 @@ export const socialMedia = [
         href: "https://wa.me/201010434465",
     },
 ];
+
+export const socialLinks = socialMedia
+    .filter(({ name }) => name === 'GitHub' || name === 'LinkedIn')
+    .map(({ name, href }) => ({ label: name, href }));
