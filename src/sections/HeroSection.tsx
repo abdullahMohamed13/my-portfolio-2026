@@ -1,194 +1,51 @@
-import { PiBoxingGloveFill } from "react-icons/pi";
-import { SiChessdotcom } from "react-icons/si";
-import { VscTerminalLinux } from "react-icons/vsc";
+import { ArrowRight } from "pixelarticons/react";
+import HeroArtwork from "@/components/HeroArtwork";
+import { CartoonButton } from "@/components/ui/cartoon-button";
 
-function HeroBackground() {
-	return (
-		<div
-			className="absolute inset-0 overflow-hidden pointer-events-none select-none"
-			aria-hidden
-		>
-			{/* Diagonal rule — top-left to mid-right */}
-			<svg
-				className="absolute inset-0 w-full h-full"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				{/* Long diagonal stroke */}
-				<line
-					x1="-5%"
-					y1="15%"
-					x2="55%"
-					y2="85%"
-					stroke="#007bff"
-					strokeWidth="0.6"
-					strokeOpacity="0.18"
-				/>
-				{/* Second parallel diagonal, offset */}
-				<line
-					x1="5%"
-					y1="15%"
-					x2="65%"
-					y2="85%"
-					stroke="#007bff"
-					strokeWidth="0.3"
-					strokeOpacity="0.10"
-				/>
-				{/* Horizontal rule near bottom */}
-				<line
-					x1="10%"
-					y1="88%"
-					x2="60%"
-					y2="88%"
-					stroke="#9370DB"
-					strokeWidth="0.5"
-					strokeOpacity="0.20"
-				/>
-				{/* Short vertical tick */}
-				<line
-					x1="60%"
-					y1="84%"
-					x2="60%"
-					y2="92%"
-					stroke="#9370DB"
-					strokeWidth="0.5"
-					strokeOpacity="0.20"
-				/>
-			</svg>
-
-			{/* Bottom-left: small filled dot cluster */}
-			{[
-				{ x: "8%", y: "72%" },
-				{ x: "10%", y: "76%" },
-				{ x: "6%", y: "76%" },
-				{ x: "8%", y: "80%" },
-				{ x: "12%", y: "80%" },
-				{ x: "4%", y: "80%" },
-			].map((pos, i) => (
-				<span
-					key={i}
-					className="absolute rounded-full"
-					style={{
-						left: pos.x,
-						top: pos.y,
-						width: 3,
-						height: 3,
-						background: "#007bff",
-						opacity: 0.22,
-					}}
-				/>
-			))}
-
-			{/* Center-right: thin cross / plus mark */}
-			<svg
-				className="absolute"
-				style={{ right: "22%", top: "42%", opacity: 0.15 }}
-				width="18"
-				height="18"
-				viewBox="0 0 18 18"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<line
-					x1="9"
-					y1="0"
-					x2="9"
-					y2="18"
-					stroke="#9370DB"
-					strokeWidth="0.8"
-				/>
-				<line
-					x1="0"
-					y1="9"
-					x2="18"
-					y2="9"
-					stroke="#9370DB"
-					strokeWidth="0.8"
-				/>
-			</svg>
-
-			{/* Top-left: tiny square outline */}
-			<div
-				className="absolute border rotate-12"
-				style={{
-					width: 22,
-					height: 22,
-					top: "18%",
-					left: "14%",
-					borderColor: "#9370DB",
-					borderWidth: 0.8,
-					opacity: 0.18,
-				}}
-			/>
-
-			{/* Mid-left: single long vertical rule */}
-			<div
-				className="absolute"
-				style={{
-					width: 0.6,
-					height: 80,
-					top: "38%",
-					left: "18%",
-					background: "#007bff",
-					opacity: 0.13,
-				}}
-			/>
-		</div>
-	);
-}
-
-export default function Hero() {
-	const hobbies: {
-		icon: React.ReactNode;
-		color: string;
-		position: React.CSSProperties;
-	}[] = [
-		{
-			icon: <PiBoxingGloveFill />,
-			color: "#e20000",
-			position: { top: "15%", left: "8%" },
-		},
-		{
-			icon: <SiChessdotcom />,
-			color: "#007bff",
-			position: { bottom: "20%", right: "10%" },
-		},
-		{
-			icon: <VscTerminalLinux />,
-			color: "#9370DB",
-			position: { top: "60%", left: "5%" },
-		},
-	];
-
+export default function HeroSection() {
 	return (
 		<section
 			id="hero"
-			className="relative flex items-center justify-center min-h-screen"
+			className="relative flex h-screen flex-col justify-between overflow-hidden bg-background px-[clamp(1.375rem,6vw,5.75rem)] pt-[calc(60px+1.75rem)] max-[760px]:h-[100svh] max-[760px]:px-4"
 		>
-			<HeroBackground />
-
-			{/* Your existing content — unchanged */}
-			<div className="z-10">
-				<div>
-					<h1
-						className="text-3xl font-elegant sm:text-4xl md:text-4xl"
-						style={{ fontFamily: "Clash Display" }}
-					>
-						Abdallah Aziz
-					</h1>
-					<div className="mt-2 sm:mt-5 md:mt-0 text-4xl sm:text-5xl md:text-7xl lg:text-8xl flex flex-col">
-						<span>Front End Developer</span>
-						<span className="pl-10 md:pl-30">Web Designer</span>
-					</div>
-				</div>
-				{hobbies.map((h, i) => (
-					<i
-						key={i}
-						className="absolute text-4xl opacity-40 pointer-events-none select-none"
-						style={{ color: h.color, ...h.position }}
-					>
-						{h.icon}
-					</i>
-				))}
+			<div className="relative z-10 flex shrink-0 justify-between gap-4 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-muted-foreground max-[760px]:[&>span:last-child]:hidden">
+				<span className="uppercase">
+					Frontend Developer | Contributor | Mentor
+				</span>
+				<span>Cairo, Egypt · Available for freelancing</span>
 			</div>
+
+			<div className="relative z-10 isolate flex min-h-0 flex-1 items-end justify-center">
+				<div className="relative isolate z-0 aspect-[1158/1358] max-h-full max-[760px]:w-[min(90%,54svh)]">
+					<div
+						aria-hidden="true"
+						className="absolute left-1/2 top-[60%] -z-10 aspect-square w-[min(65%,100cqw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary"
+					/>
+					<img
+						className="relative z-10 h-full w-full object-contain object-bottom"
+						src="/me-hero.png"
+						alt="Abdallah Aziz"
+					/>
+				</div>
+				<HeroArtwork />
+				<CartoonButton
+					label="Explore selected work"
+					href="#projects"
+					icon={<ArrowRight aria-hidden="true" />}
+					color="bg-accent"
+					wrapperClassName="absolute left-0 bottom-[clamp(4.5rem,10vh,7rem)] z-20 font-mono text-xs uppercase max-[760px]:bottom-auto max-[760px]:top-2 max-[760px]:left-1/2 max-[760px]:w-max max-[760px]:-translate-x-1/2"
+				/>
+			</div>
+
+			{/*<div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 border-t border-foreground/25">
+				<div className="flex w-full items-baseline justify-between gap-[0.15em] px-[clamp(0.5rem,1.2vw,1rem)] font-display text-[clamp(1.75rem,6.5vw,6.25rem)] font-black uppercase leading-[0.72] tracking-[-0.085em] text-foreground [text-shadow:0.035em_0.035em_0_var(--color-primary)] max-[760px]:text-[clamp(1rem,5.4vw,3.5rem)]">
+					<span className="-rotate-[2deg] origin-left">Design</span>
+					<span className="text-primary">/</span>
+					<span className="translate-y-[0.05em]">Code</span>
+					<span className="text-primary">/</span>
+					<span className="rotate-[1.5deg] origin-right">Collaboration</span>
+				</div>
+			</div>*/}
 		</section>
 	);
 }

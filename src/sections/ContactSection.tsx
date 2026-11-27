@@ -1,15 +1,15 @@
 import { toast } from 'sonner';
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
-// Components
-import AnimatedHeader from '../components/AnimatedHeader';
-import { Button } from '@/components/ui/button';
 // Icons
 import { Mail, MessageSquare, Send, SendHorizontal } from 'lucide-react';
 // Sounds
 import { playSound } from '@/utils/playSound';
 import ConfirmationSound from '@/assets/sound/notification.oga?url'
 import ErrorSound from '@/assets/sound/error.oga?url'
+// Components
+import WatchingFace from '@/components/WatchingFace';
+import { CartoonButton } from '@/components/ui/cartoon-button';
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -18,6 +18,7 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState<'idle' | 'sending' | 'success'>('idle');
+  const [isTyping, setIsTyping] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -58,23 +59,19 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="flex-section-center px-4 section-padding">
-      <div className='flex items-center justify-center flex-col gap-0 mb-3'>
-        <AnimatedHeader text='Contact Me'/>
-        <h3 className='sub-heading'>
-          /* Let's Have a Convo! */
-        </h3>
+    <section id="contact" className="flex-section-center section-padding px-4">
+      <div className="mb-3 flex flex-col items-center justify-center gap-0">
+        <h2 className="m-0 font-display text-[clamp(2.125rem,5vw,3.75rem)] text-foreground">Let’s talk</h2>
       </div>
 
-      <div className="flex flex-col gap-6 w-full max-w-xl bg-card rounded-2xl shadow-xl p-8">
-        {/*<p className="text-base text-destructive font-medium -mt-2">
-          Kindly enter a valid gmail address to ensure I can get back to you.
-        </p>*/}
+      <div className="flex w-full max-w-xl flex-col gap-6 rounded-none border border-foreground bg-card p-8 shadow-[6px_6px_0_var(--foreground)]">
+
+        <WatchingFace isTyping={isTyping} />
 
         <form className="flex flex-col gap-4 *:flex *:flex-col *:gap-1" onSubmit={handleSubmit}>
 
           <label>
-            <div className='flex items-center gap-1'>
+            <div className="flex items-center gap-1 font-mono text-[0.6875rem] uppercase">
               <Mail size={20}/>
               <span className="font-medium">Your Email</span>
             </div>
@@ -83,6 +80,8 @@ export default function Contact() {
               name="email"
               value={form.email}
               onChange={handleChange}
+              onFocus={() => setIsTyping(true)}
+              onBlur={() => setIsTyping(false)}
               required
               className="contact-input"
               placeholder="you@email.com"
@@ -90,7 +89,7 @@ export default function Contact() {
           </label>
 
           <label>
-            <div className='flex items-center gap-1'>
+            <div className="flex items-center gap-1 font-mono text-[0.6875rem] uppercase">
               <MessageSquare size={20}/>
               <span className="font-medium">Subject</span>
             </div>
@@ -99,6 +98,8 @@ export default function Contact() {
               name="subject"
               value={form.subject}
               onChange={handleChange}
+              onFocus={() => setIsTyping(true)}
+              onBlur={() => setIsTyping(false)}
               required
               className="contact-input"
               placeholder="What would you like to talk about?"
@@ -106,7 +107,7 @@ export default function Contact() {
           </label>
 
           <label>
-            <div className='flex items-center gap-1'>
+            <div className="flex items-center gap-1 font-mono text-[0.6875rem] uppercase">
               <Send size={20}/>
               <span className="font-medium">Message</span>
             </div>
@@ -114,6 +115,8 @@ export default function Contact() {
               name="message"
               value={form.message}
               onChange={handleChange}
+              onFocus={() => setIsTyping(true)}
+              onBlur={() => setIsTyping(false)}
               required
               rows={5}
               className="contact-input resize-none"
@@ -121,18 +124,14 @@ export default function Contact() {
             />
           </label>
 
-          <Button
+          <CartoonButton
             type="submit"
-            className="mt-2 font-semibold bg-primary hover:bg-primary/80 focus:outline-none focus:ring-2"
+            color="bg-accent"
+            className="mt-2 font-mono text-xs font-semibold uppercase"
+            icon={<SendHorizontal aria-hidden="true" />}
+            label={submitted === 'sending' ? 'Sending...' : submitted === 'success' ? 'Sent!' : 'Send'}
             disabled={submitted !== 'idle'}
-          >
-            <div className='flex items-center gap-1'>
-              <SendHorizontal />
-              <span>
-                {submitted === 'sending' ? 'Sending...' : submitted === 'success' ? 'Sent!' : 'Send'}
-              </span>
-            </div>
-          </Button>
+          />
 
         </form>
       </div>
