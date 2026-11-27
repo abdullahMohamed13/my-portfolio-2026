@@ -4,18 +4,6 @@ export const linkedinPosts: LinkedInPostProps[] = [
   {
     id: 0,
     url: 'https://www.linkedin.com/feed/update/urn:li:activity:7479114919326461953/',
-    title: {
-      ar: 'اتخرجنا. ودليل لسه في البداية.',
-      en: 'We graduated. Daleel is just getting started.',
-    },
-    topic: {
-      ar: 'بناء في العلن',
-      en: 'Building in public',
-    },
-    excerpt: {
-      ar: 'تطبيق موبايل بيساعد الناس تخلص مصالحها الحكومية: الورق المطلوب، المصاريف، والمكاتب. شهور من الشغل، وأكتر من 395 خدمة في 50 فئة.',
-      en: 'A mobile app that helps people finish government paperwork: the documents, the fees, and the offices. Months of work, 395+ services across 50 categories.',
-    },
     arabicParagraphs: [
       <>الحمدلله، اتخرجنا<br />ومشروع تخرجنا عن دليل</>,
       <>دليل هو موبايل أبليكيشن بيساعدك تنجز أي مصلحة حكومية محتاجة منك ورق، عن طريق إنه بيدلك على اللي هتحتاجه بالظبط، زي مثلا:<br />- الورق المطلوب<br />- المصاريف الإدارية<br />- أماكن المصالح الحكومية اللي محتاج تروحها<br />- وغيرها كتير</>,
@@ -24,17 +12,17 @@ export const linkedinPosts: LinkedInPostProps[] = [
       <>احنا مؤمنين جدا بالفكرة وبالنسبالنا مش مجرد مشروع تخرج خلاص ويتنسي<br />ف استنوا أخبار جديدة عن دليل في الأسابيع القادمة بإذن الله 🇪🇬🇪🇬⏳</>,
     ],
     englishParagraphs: [
-      <>Thank God, we’ve graduated!<br />Our graduation project is Daleel.</>,
-      <>Daleel is a mobile app that helps you complete government procedures that require paperwork. It guides you through exactly what you need, such as:<br />- Required documents<br />- Administrative fees<br />- The government offices you need to visit<br />- And much more</>,
-      <>So instead of leaving home to get your driver’s license, only to have an employee tell you that you’re missing a medical exam certificate and send you all the way back for nothing…<br />Why go through that when Daleel is here? You’d have to be a little strange not to use it 🤷🏻‍♂️🤷🏻‍♂️</>,
+      <>Thank God, we’ve graduated!<br />Our graduation project is Dalil.</>,
+      <>Dalil is a mobile app that helps you complete government procedures that require paperwork. It guides you through exactly what you need, such as:<br />- Required documents<br />- Administrative fees<br />- The government offices you need to visit<br />- And much more</>,
+      <>So instead of leaving home to get your driver’s license, only to have an employee tell you that you’re missing a medical exam certificate and send you all the way back for nothing…<br />Why go through that when Dalil is here? You’d have to be a little strange not to use it 🤷🏻‍♂️🤷🏻‍♂️</>,
       <>We’re here to help. We’ve spent months working on the data the app will show, and we’ve gathered information on more than 395 government services across 50 categories, including:<br />- Civil registry<br />- Higher education<br />- Driver’s licenses and traffic services<br />- Housing and mortgage finance<br />- Commercial registry, and many more</>,
-      <>We really believe in this idea. To us, Daleel isn’t just a graduation project that we’ll forget about.<br />Stay tuned for more news about Daleel in the coming weeks, God willing 🇪🇬🇪🇬⏳</>,
+      <>We really believe in this idea. To us, Dalil isn’t just a graduation project that we’ll forget about.<br />Stay tuned for more news about Dalil in the coming weeks, God willing 🇪🇬🇪🇬⏳</>,
     ],
     images: [
       { src: '/posts/grad-1.jpeg', alt: 'Five graduates in suits talking together outside on graduation day' },
       { src: '/posts/grad-2.jpeg', alt: 'Five graduates in suits pointing toward the camera' },
       { src: '/posts/grad-3.jpeg', alt: 'Two men in suits taking a mirror selfie, one giving a thumbs up' },
-      { src: '/posts/grad-4.jpeg', alt: 'Daleel graduation project logo with the Arabic word دليل and the English name DALEEL on a green background' },
+      { src: '/posts/grad-4.jpeg', alt: 'Dalil graduation project logo with the Arabic word دليل and the English name DALEEL on a green background' },
     ],
     reactions: 100,
     comments: 22,
@@ -43,18 +31,6 @@ export const linkedinPosts: LinkedInPostProps[] = [
   {
 		id: 1,
     url: "https://lnkd.in/p/eg_HdRtU",
-    title: {
-      ar: 'Selectors في Tailwind بتوفر عليك تكرار الكود',
-      en: 'Tailwind selectors that cut the repetition',
-    },
-    topic: {
-      ar: 'صنعة الواجهات',
-      en: 'Frontend craft',
-    },
-    excerpt: {
-      ar: 'الـArbitrary selectors بتقلل تكرار الكود وتسرّع بناء الواجهة. شرحتهم خطوة بخطوة بأمثلة في الصور.',
-      en: 'Arbitrary selectors reduce repeated code and speed up UI work. I broke the syntax down with examples.',
-    },
 	    arabicParagraphs: [
       <>فيه حاجة لو عرفتها في Tailwindcss هتوفر عليك وقت ومجهود وانت بتعمل ستايلنج للعناصر وبتبني الUI.<br />اسمها Arbitrary Selectors، ودي اساليب بتقلل تكرار الكود وبتسرع شغلك بشكل كبير، هتلاقي الشرح في الصور ابقى بص عليهم بصة.</>,
       <>وفي الكومنتات هتلاقي فايل فيه React Component فيه امثلة ادفانسد اكتر لو حابب تتدرب.</>,
@@ -75,18 +51,6 @@ export const linkedinPosts: LinkedInPostProps[] = [
 	{
 	id: 5,
     url: "https://lnkd.in/p/ergru_EX",
-    title: {
-      ar: 'شغل GitHub مع تيم من غير صداع',
-      en: 'A calmer GitHub workflow for teams',
-    },
-    topic: {
-      ar: 'شغل التيم',
-      en: 'Team workflow',
-    },
-    excerpt: {
-      ar: 'العادات اللي بتخلي التيم مايدوسش على بعض: branches منفصلة، rebase، commits واضحة، pull requests، وتنضيف بعد الدمج.',
-      en: 'The habits that keep a team out of each other’s way: separate branches, rebases, focused commits, pull requests, and cleanup.',
-    },
 	    arabicParagraphs: [
       <>لو هتشتغل مع تيم على GitHub قريب، دول اهم الحاجات اللي هتساعدك تشتغل بنظام اكتر وتقدر تتفادى الConflicts بقدر الامكان.</>,
       <>ودا لينك GitHub Repo فيه كل الأوامر الموجودة في الصور:<br /><a className="text-primary underline underline-offset-4 hover:text-primary/80" dir="ltr" href="https://lnkd.in/d_hunKij" target="_blank" rel="noreferrer">https://lnkd.in/d_hunKij</a></>,
@@ -111,18 +75,6 @@ export const linkedinPosts: LinkedInPostProps[] = [
   {
 		id: 2,
     url: "https://lnkd.in/p/evzJwkqS",
-    title: {
-      ar: 'TypeScript إمتى بقت تستاهل؟',
-      en: 'Why TypeScript stopped feeling like extra work',
-    },
-    topic: {
-      ar: 'Types والأدوات',
-      en: 'Types & tooling',
-    },
-    excerpt: {
-      ar: 'بريزنتيشن في Huma-volve عن إزاي الـtypes بتخلي الكود أنضف وأأمن، وبتوضّح التواصل بين الـfrontend والـbackend.',
-      en: 'A presentation for Huma-volve on how types make code cleaner, safer, and clearer between frontend and backend.',
-    },
 	    arabicParagraphs: [
       <>في جزء من تدريب الـFrontend الحالي بتاعي مع Huma-volve💙، قدمت بريزنتيشن عن TypeScript وازاي ممكن تساعد اي مبرمج انه يكتب كود انضف وأأمن.</>,
       <>اول ما بدات اتعلم Typescript سألت نفسي، هوا ليه اصلا؟ ما Javascript مزعلتناش في حاجة وشغالة زي الفل اهو، ليه استخدم لغة برمجة تجبرني "ازود" على نفسي كود؟</>,
@@ -155,18 +107,6 @@ export const linkedinPosts: LinkedInPostProps[] = [
   {
 		id: 3,
     url: "https://lnkd.in/p/eDxbT6K8",
-    title: {
-      ar: 'خمسة أيام عشان أفهم قيمة الـstructure',
-      en: 'A five-day lesson in project structure',
-    },
-    topic: {
-      ar: 'الهيكلة',
-      en: 'Structure',
-    },
-    excerpt: {
-      ar: 'رجعت لمشاريع قديمة بـHTML وCSS ودفعت تمن كل اختصار. اللي كان ممكن ياخد يوم، خد خمسة.',
-      en: 'I revisited old HTML and CSS projects and paid for every shortcut. A job that should have taken a day took five.',
-    },
 	    arabicParagraphs: [
       <>انا دايما كنت بسمع عن مبدأ الscalability في المشاريع وإنه لازم وانا ببني المشروع ابقى عامل حسابي اني هزوره في المستقبل واضيف فيه حاجات وكدا<br />والكلام جميل اوي وهوا نظري بس مكنتش مستوعب لأي درجة النصيحة دي مهمة</>,
       <>الاسبوع اللي فات لما حصل المشكلة بتاعت حريق رمسيس والنت فصل وكدا مكنتش عارف اشتغل يعتبر فقولت اما اقلب في المشاريع القديمة اوي اللي عملتها بhtmlوcss واروق عليهم بشوية شوييية جافا سكريبت موضوع مش كبير يعني</>,
@@ -186,18 +126,6 @@ export const linkedinPosts: LinkedInPostProps[] = [
   {
 		id: 4,
 		url: "https://lnkd.in/p/e_Gt8Q-5",
-    title: {
-      ar: 'كتاب TypeScript كنت نفسي أقراه بدري',
-      en: 'The TypeScript book I wish I’d read sooner',
-    },
-    topic: {
-      ar: 'التعلّم',
-      en: 'Learning in public',
-    },
-    excerpt: {
-      ar: 'TypeScript Deep Dive شرح الـgenerics والـclasses وربط TypeScript بـReact بشكل أوضح من الـdocs الرسمي بالنسبة لي.',
-      en: 'TypeScript Deep Dive explained generics, classes, and React typing more clearly than the official docs for me.',
-    },
 	    arabicParagraphs: [
       <>لو ناوي تتعلم typescript قريب فا فيه كتاب هيفيدك اوي اسمو<br />Typescript Deep Dive</>,
       <>بالنسبالي كان مفيد اكتر من ال documentation الرسمي بكتير خصوصا في حتة ربط typescript مع react، وتوضيح المفاهيم المعقدة بتاعت اللغة زي الgenerics والclasses</>,
