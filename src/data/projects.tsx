@@ -12,7 +12,7 @@ export const projects: ProjectProps[] = [
       { text: 'Tailwind CSS', icon: <SiTailwindcss /> },
     ],
     description: 'A real-time team communication platform for organized workspace, channel, and direct message conversations. Includes workspace management, invitations, join requests, member roles, guest access, profiles, notifications, and responsive chat navigation.',
-    imgSrc: '/projects/openchats/Openchats-hero.png',
+    imgSrc: '/projects/openchats/openchats-hero.png',
     liveURL: 'http://openchats.qzz.io/',
     githubURL: 'https://github.com/abdullahMohamed13/openchats',
 	},
@@ -27,7 +27,7 @@ export const projects: ProjectProps[] = [
       { text: 'CSS', icon: <SiCss3 /> },
     ],
     description: 'Official IEEE student branch website for sharing branch information, events, and community updates.',
-    imgSrc: '/projects/ieee/ieee-landing.png',
+    imgSrc: '/projects/ieee.png',
     liveURL: 'https://ieeesha.org/',
     githubURL: 'https://github.com/ieeesha10-svg/Ieee-website',
 	},
@@ -42,7 +42,7 @@ export const projects: ProjectProps[] = [
       { text: 'Tailwind CSS', icon: <SiTailwindcss /> },
     ],
     description: 'Built a trilingual portfolio for The Good Studio, with English, Spanish, and French content throughout. Visitors can chat with an AI-powered studio guide about services and process, explore selected work, and send a tailored project inquiry. The experience pairs a live 3D hero mark with editorial design and responsive motion.',
-    imgSrc: '/projects/studio/the-good-studio-hero.png',
+    imgSrc: '',
     liveURL: 'https://the-good-studio.abdullah-229op.workers.dev/en',
     githubURL: 'https://github.com/abdullahMohamed13/the-good-studio',
 	},
@@ -53,7 +53,7 @@ export const projects: ProjectProps[] = [
     themeColor: '#2E5C5A',
     stackIcons: [],
     description: "Morgan's Hope project website.",
-    imgSrc: '/projects/morgan/morgan-landing.png',
+    imgSrc: '',
     liveURL: 'https://morgans-hope.vercel.app/',
     githubURL: 'https://github.com/MorgansHope/MorgansHope',
 	},
@@ -73,9 +73,10 @@ export const projects: ProjectProps[] = [
     The system enables fighters to explore the gym's classes, coaches, branches, and membership offerings.
     Then create an account and book training sessions.`,
     imgSrc: '/projects/titan-mma.webp',
-    projectInSite: '/projects/titan/titan-landing.png',
-    liveURL: 'https://titan-mma.vercel.app/',
+    projectInSite: '/projects/titan-mma-home-page.webp',
+    liveURL: 'https://titan-mma-gym.netlify.app',
     githubURL: 'https://github.com/abdullahMohamed13/titan-MMA-gym',
+    linkedinPost: 'https://www.linkedin.com/posts/abdallah-aziz-999b54295_titanmma-reactjs-typescript-activity-7363564671762579458-U-7Z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEeKCYUB2f05TmAQBvRvCLK8mgQqJSaN2fg'
   },
   // Previous project entries retained for reference while the new project set is prepared.
   /*
