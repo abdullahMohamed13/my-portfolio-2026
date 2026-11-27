@@ -16,8 +16,8 @@ export default function ProjectsSection() {
               <span className="absolute left-6 top-6 border border-foreground bg-accent px-2 py-1.5 font-mono text-xs">{String(index + 1).padStart(2, '0')}</span>
             </div>
             <div>
-              {/*<p className="portfolio-eyebrow mb-3">Featured project{project.deploymentPlatform ? ` / ${project.deploymentPlatform}` : ''}</p>*/}
-              <h3 className="mb-5 text-[clamp(2.125rem,4vw,3.625rem)] leading-none tracking-[var(--tracking-display)]">{project.title}</h3>
+              <p className="portfolio-eyebrow mb-3">Featured project{project.deploymentPlatform ? ` / ${project.deploymentPlatform}` : ''}</p>
+              <h3 className="mb-5 text-[clamp(2.125rem,4vw,3.625rem)] leading-none tracking-[-0.06em]">{project.title}</h3>
               <p className="leading-[1.7] text-[#4c4a43]">{project.description}</p>
               <div className="my-6 flex flex-wrap gap-2">
                 {project.stack.map((technology) => <span className="border border-border px-2 py-1.5 font-mono text-[0.625rem] uppercase" key={technology}>{technology}</span>)}

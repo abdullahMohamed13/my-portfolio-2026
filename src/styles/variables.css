@@ -21,13 +21,12 @@
   --input: #f9f6ed;
   --ring: #007bff;
   --radius: 0.5rem;
-  --tracking-normal: 0.01em;
-  --tracking-display: -0.01em;
+  --tracking-normal: -0.025em;
   --spacing: 0.25rem;
 
-  --type-display: 'Mellow', Impact, sans-serif;
-  --type-body: 'Korplex', sans-serif;
-  --type-label: 'Korplex', sans-serif;
+  --type-display: 'Black Ops One', Impact, sans-serif;
+  --type-body: 'Manrope', sans-serif;
+  --type-label: 'Manrope', sans-serif;
   --color-paper: var(--background);
   --color-ink: var(--foreground);
   --color-muted: var(--muted-foreground);
