@@ -22,7 +22,11 @@ export default function FadeInOnScroll({ children, direction = "up", className, 
   return (
     <motion.section
       initial={directions[direction]}
-      animate={{ opacity: 1, y: 0, x: 0 }}
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      viewport={{ 
+        once: true, 
+        amount: 0.1,
+      }}
       transition={{ 
         duration: 0.6, 
         ease: [0.25, 0.1, 0.25, 1]
