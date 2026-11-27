@@ -126,7 +126,9 @@
   }
 
   .portfolio-frame {
-    @apply mx-auto w-full max-w-[1600px] overflow-hidden bg-background font-sans;
+    /* clip on the x axis only: `overflow: hidden` would turn the frame into a
+       scroll container and stop the pinned project deck from sticking. */
+    @apply mx-auto w-full overflow-x-clip bg-background font-sans;
   }
 
   .portfolio-section {

@@ -3,18 +3,17 @@ import { SeoHelmet } from '@/components/SeoHelmet';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import HeroSection from '@/sections/HeroSection';
-import ProjectsSection from '@/sections/ProjectsSection';
+// import ProjectsSection from '@/sections/ProjectsSection';
+import ProjectsDemo from '@/sections/ProjectsDemo';
 import ApproachSection from '@/sections/ApproachSection';
 import GitHubProofSection from '@/sections/GitHubProofSection';
 import TestimonialsSection from '@/sections/TestimonialsSection';
-import ContactIntroSection from '@/sections/ContactIntroSection';
 import ContactSection from '@/sections/ContactSection';
 import LinkedInSection from '@/sections/LinkedInSection';
+import FaqSection from '@/sections/FaqSection';
 import HorizonSection from '@/components/ui/horizon-hero-section';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import ContactIntroSection from '@/sections/ContactIntroSection';
 
 export default function Home() {
   const pageRef = useRef<HTMLElement>(null);
@@ -30,25 +29,6 @@ export default function Home() {
         { yPercent: 0, rotateX: 0, opacity: 1, duration: 1.15, ease: 'power3.out', delay: 0.12 },
       );
 
-      gsap.fromTo('[data-motion="project-title"]',
-        { yPercent: 30, rotateX: -24, transformPerspective: 1100, transformOrigin: '50% 100%', opacity: 0.35 },
-        { yPercent: 0, rotateX: 0, opacity: 1, ease: 'none', scrollTrigger: {
-          trigger: '#projects', start: 'top 72%', end: 'top 18%', scrub: 0.7,
-        } },
-      );
-
-      gsap.fromTo('#projects article',
-        { y: 90, rotateX: 8, transformPerspective: 1200, opacity: 0 },
-        { y: 0, rotateX: 0, opacity: 1, stagger: 0.16, ease: 'power2.out',
-          scrollTrigger: { trigger: '#projects article:first-of-type', start: 'top 82%', end: 'top 48%', scrub: 0.8 } },
-      );
-
-      gsap.fromTo('[data-motion="approach-title"]',
-        { rotateY: -10, z: -90, x: -30, opacity: 0.45, transformPerspective: 1000 },
-        { rotateY: 0, z: 0, x: 0, opacity: 1, ease: 'none', scrollTrigger: {
-          trigger: '#approach', start: 'top 78%', end: 'top 22%', scrub: 0.8,
-        } },
-      );
     });
 
     return () => mm.revert();
@@ -60,12 +40,15 @@ export default function Home() {
       <NavBar />
       <HeroSection />
       <HorizonSection />
-      <ProjectsSection />
+			{/*<ProjectsSection />*/}
+			<ProjectsDemo />
+			
       <ApproachSection />
       <GitHubProofSection />
       <LinkedInSection />
       <TestimonialsSection />
       <ContactIntroSection />
+      {/*<FaqSection />*/}
 			<div className="bg-background px-5 pb-[5.625rem] [&_section]:pt-6">
 				<ContactSection />
 			</div>
