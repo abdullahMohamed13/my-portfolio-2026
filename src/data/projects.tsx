@@ -4,6 +4,7 @@ import type { ProjectProps } from "@/types/ProjectProps";
 export const projects: ProjectProps[] = [
   {
     title: 'OpenChats',
+    projectType: 'Individual',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Convex', 'Better Auth', 'Stream Chat'],
     themeColor: '#12623A',
     stackIcons: [
@@ -19,6 +20,7 @@ export const projects: ProjectProps[] = [
   
   {
     title: 'IEEE Official Website',
+    projectType: 'Team',
     stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT'],
     themeColor: '#0096ff',
     stackIcons: [
@@ -34,6 +36,7 @@ export const projects: ProjectProps[] = [
   
   {
     title: "The Good Studio",
+    projectType: 'Individual',
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Three.js', 'React Three Fiber', 'Cloudflare AI'],
     themeColor: '#ee6845',
     stackIcons: [
@@ -43,16 +46,18 @@ export const projects: ProjectProps[] = [
     ],
     description: 'Built a trilingual portfolio for The Good Studio, with English, Spanish, and French content throughout. Visitors can chat with an AI-powered studio guide about services and process, explore selected work, and send a tailored project inquiry. The experience pairs a live 3D hero mark with editorial design and responsive motion.',
     imgSrc: '/projects/studio/the-good-studio-hero.png',
+    video: 'https://res.cloudinary.com/uwwnts8h/video/upload/v1795267591/promo-cropped_z3soqw.mp4',
     liveURL: 'https://the-good-studio.abdullah-229op.workers.dev/en',
     githubURL: 'https://github.com/abdullahMohamed13/the-good-studio',
 	},
   
   {
     title: "Morgan's Hope",
-    stack: [],
+    projectType: 'Team',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Express', 'PostgreSQL', 'Firebase', 'FastAPI'],
     themeColor: '#2E5C5A',
     stackIcons: [],
-    description: "Morgan's Hope project website.",
+    description: 'An AI-assisted lung cancer screening platform that analyzes chest CT scans and X-ray images, provides structured result reviews and history, recommends hospitals for critical cases, and offers a patient-facing assistant for clearer follow-up guidance.',
     imgSrc: '/projects/morgan/morgan-landing.png',
     liveURL: 'https://morgans-hope.vercel.app/',
     githubURL: 'https://github.com/MorgansHope/MorgansHope',
@@ -60,9 +65,10 @@ export const projects: ProjectProps[] = [
   
   {
     title: 'Titan MMA Gym',
+    projectType: 'Individual',
     stack: ['ReactJs', 'TypeScript', 'TailwindCSS', 'Clerk', 'Convex'],
     themeColor: '#e20000',
-    deploymentPlatform: 'Netlify',
+    deploymentPlatform: 'Vercel',
     stackIcons: [
       { text: 'React', icon: <SiReact /> },
       { text: 'TypeScript', icon: <SiTypescript /> },
@@ -72,7 +78,8 @@ export const projects: ProjectProps[] = [
     description: `Full-stack booking system built for a Mixed Martial Arts (MMA) gym.
     The system enables fighters to explore the gym's classes, coaches, branches, and membership offerings.
     Then create an account and book training sessions.`,
-    imgSrc: '/projects/titan-mma.webp',
+		imgSrc: '/projects/titan-mma.webp',
+    video: "https://res.cloudinary.com/uwwnts8h/video/upload/v1795769368/titan-promo_pg1sls.mp4",
     projectInSite: '/projects/titan/titan-landing.png',
     liveURL: 'https://titan-mma.vercel.app/',
     githubURL: 'https://github.com/abdullahMohamed13/titan-MMA-gym',

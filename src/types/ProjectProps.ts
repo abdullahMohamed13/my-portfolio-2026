@@ -2,8 +2,10 @@ import type { ComponentType } from 'react';
 
 export interface ProjectProps {
   title: string
+  projectType: 'Individual' | 'Team'
   description: string
   imgSrc: string
+  video?: string
   projectInSite?: string
   deploymentPlatform?: 'Netlify' | 'Render' | 'Github Pages' | 'Vercel'
   stack: string[]

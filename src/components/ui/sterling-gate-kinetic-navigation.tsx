@@ -5,23 +5,13 @@ import { CustomEase } from 'gsap/CustomEase';
 import ClickSound from '@/assets/sound/click.oga?url';
 import ScrollSound from '@/assets/sound/scroll.oga?url';
 import { playSound } from '@/utils/playSound';
+import { kineticNavItems } from '@/data/nav-items';
+import { socialLinks } from '@/data/social-media';
 import '@/styles/kinetic-nav.css';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(CustomEase);
 }
-
-const navigation = [
-  { label: 'Work', href: '#projects', meta: 'Selected projects', shape: 1 },
-  { label: 'Approach', href: '#approach', meta: 'How I build', shape: 2 },
-  { label: 'Proof', href: '#proof', meta: 'GitHub & testimonials', shape: 3 },
-  { label: 'Contact', href: '#contact', meta: 'Start a conversation', shape: 4 },
-];
-
-const socialLinks = [
-  { label: 'GitHub', href: 'https://github.com/abdullahMohamed13' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/abdallah-m-aziz' },
-];
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
@@ -454,7 +444,7 @@ export default function KineticNavigation() {
             }}
           >
             <ul className="menu-list">
-              {navigation.map((item, index) => (
+              {kineticNavItems.map((item, index) => (
                 <li className="menu-list-item" data-shape={item.shape} key={item.href}>
                   <a
                     className="nav-link"
