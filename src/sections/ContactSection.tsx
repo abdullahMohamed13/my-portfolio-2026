@@ -7,9 +7,6 @@ import { Mail, MessageSquare, Send, SendHorizontal } from 'lucide-react';
 import { playSound } from '@/utils/playSound';
 import ConfirmationSound from '@/assets/sound/notification.oga?url'
 import ErrorSound from '@/assets/sound/error.oga?url'
-// Components
-import WatchingFace from '@/components/WatchingFace';
-import { CartoonButton } from '@/components/ui/cartoon-button';
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -18,7 +15,6 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState<'idle' | 'sending' | 'success'>('idle');
-  const [isTyping, setIsTyping] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -66,8 +62,6 @@ export default function Contact() {
 
       <div className="flex w-full max-w-xl flex-col gap-6 rounded-none border border-foreground bg-card p-8 shadow-[6px_6px_0_var(--foreground)]">
 
-        <WatchingFace isTyping={isTyping} />
-
         <form className="flex flex-col gap-4 *:flex *:flex-col *:gap-1" onSubmit={handleSubmit}>
 
           <label>
@@ -80,8 +74,6 @@ export default function Contact() {
               name="email"
               value={form.email}
               onChange={handleChange}
-              onFocus={() => setIsTyping(true)}
-              onBlur={() => setIsTyping(false)}
               required
               className="contact-input"
               placeholder="you@email.com"
@@ -98,8 +90,6 @@ export default function Contact() {
               name="subject"
               value={form.subject}
               onChange={handleChange}
-              onFocus={() => setIsTyping(true)}
-              onBlur={() => setIsTyping(false)}
               required
               className="contact-input"
               placeholder="What would you like to talk about?"
@@ -115,8 +105,6 @@ export default function Contact() {
               name="message"
               value={form.message}
               onChange={handleChange}
-              onFocus={() => setIsTyping(true)}
-              onBlur={() => setIsTyping(false)}
               required
               rows={5}
               className="contact-input resize-none"
@@ -124,14 +112,18 @@ export default function Contact() {
             />
           </label>
 
-          <CartoonButton
+          <button
             type="submit"
-            color="bg-accent"
-            className="mt-2 font-mono text-xs font-semibold uppercase"
-            icon={<SendHorizontal aria-hidden="true" />}
-            label={submitted === 'sending' ? 'Sending...' : submitted === 'success' ? 'Sent!' : 'Send'}
+            className="mt-2 cursor-pointer border border-foreground bg-accent p-3 font-mono text-xs font-semibold uppercase text-foreground shadow-[4px_4px_var(--foreground)] disabled:cursor-wait disabled:opacity-60"
             disabled={submitted !== 'idle'}
-          />
+          >
+            <div className="flex items-center gap-1">
+              <SendHorizontal />
+              <span>
+                {submitted === 'sending' ? 'Sending...' : submitted === 'success' ? 'Sent!' : 'Send'}
+              </span>
+            </div>
+          </button>
 
         </form>
       </div>
