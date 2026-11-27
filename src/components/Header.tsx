@@ -35,7 +35,7 @@ function Header() {
                           setPopoverOpen(false);
                           document.body.focus();
                       }}>
-                          {item.icon} <span>{item.label}</span>
+                          {item.icon} <span className={`${item.label === 'Resume' && 'text-primary'}`}>{item.label}</span>
                       </div>
                   })}
               </PopoverContent>
@@ -55,7 +55,8 @@ function Header() {
           </div>
           <div className="hidden md:flex gap-4 justify-end p-2 *:cursor-pointer *:hover:underline">
               {navItems.slice(1).map((item, key) => {
-                  return <div key={key} onClick={item.onClick}>{`#${item.label}`}</div>
+                  return <div key={key} className={`${item.label === 'Resume' && 'hover:text-primary'}`}
+                  onClick={item.onClick}>{item.label === 'Resume' ? '/Resume' : `#${item.label}`}</div>
               })}
           </div>
       </>

@@ -1,21 +1,64 @@
-import ScrollSound from '@/assets/sound/scroll.oga?url';
-import { playSound } from '@/utils/playSound';
+import { useEffect, useState } from 'react';
+import Dock from './react-bits/Components/Dock';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { navItems } from '@/data/nav-items';
+import { motion } from 'motion/react';
 
-const navigation = [
-  { label: 'Work', href: '#projects' },
-  { label: 'Approach', href: '#approach' },
-  { label: 'Proof', href: '#proof' },
-  { label: 'Contact', href: '#contact' },
-];
+// Navbar on desktop
+function NavBar() {
+    const [showNav, setShowNav] = useState<boolean>(true)
+    const [scrolled, setScrolled] = useState(false);
 
-export default function NavBar() {
-  return (
-    <header className="relative z-20 flex h-[4.75rem] items-center justify-between border-b border-border bg-background px-[clamp(1.375rem,6vw,5.75rem)] max-[760px]:h-16">
-      <a className="whitespace-nowrap font-display text-lg leading-none tracking-[-0.04em] text-foreground no-underline sm:text-xl" href="#hero" aria-label="Abdallah Aziz home">Abdallah <span className="text-primary">Aziz</span></a>
-      <nav aria-label="Main navigation" className="flex gap-[clamp(0.75rem,3vw,3rem)] max-[760px]:gap-3">
-        {navigation.map((item) => <a className="font-mono text-xs uppercase tracking-wide text-foreground no-underline transition-colors hover:text-primary max-[760px]:text-[0.5625rem]" key={item.href} href={item.href} onClick={() => playSound(ScrollSound)}>{item.label}</a>)}
-      </nav>
-      <a className="border border-foreground px-4 py-3 font-mono text-xs uppercase tracking-wide text-foreground no-underline max-[760px]:px-2 max-[760px]:py-2 max-[760px]:text-[0.5625rem]" href="#contact" onClick={() => playSound(ScrollSound)}>Let’s talk <span className="ml-2.5 text-primary">↗</span></a>
-    </header>
-  );
+    const handleNavExpand = () => {
+        setShowNav(prev => !prev);
+    }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 1150);
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [])
+
+    return (
+        <nav className="fixed bottom-0 left-0 w-full z-100 justify-center hidden md:flex">
+            {
+                scrolled &&  (
+                    <motion.button
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.2 }}
+                        className={`relative transition-transform duration-300 ${showNav ? 'translate-y-0' : 'translate-y-18'} w-full max-w-xs sm:max-w-md md:max-w-xl mx-auto`}
+                    >
+                        {/* navbar-toggle-arrow  */}
+                        <button
+                            className={`absolute right-0 border-neutral-700 bg-background text-foreground cursor-pointer rounded-xl shadow-lg p-2 transition-opacity duration-200 hover:bg-opacity-80 focus:outline-none z-10
+                                ${showNav ? 'bottom-11 sm:right-11' : 'bottom-19 sm:right-68.5'}`}
+                            onClick={handleNavExpand}
+                            title={showNav ? 'Hide navigation' : 'Show navigation'}
+                            aria-label={showNav ? 'Hide navigation' : 'Show navigation'}
+                            type="button">
+                            {showNav ? <AiOutlineClose size={16} /> : <AiOutlineMenu size={12} />}
+                        </button>
+
+                        <div>
+                            <Dock
+                                className={`${!showNav && `pointer-events-none`} bg-background rounded-t-2xl
+                                shadow-2xl px-4 py-2 flex justify-center items-center`}
+                                items={navItems.slice(0, -1)}
+                                panelHeight={68}
+                                baseItemSize={50}
+                                magnification={70}
+                            />
+                        </div>
+                    </motion.button>
+                )
+            }
+        </nav>
+    );
 }
+
+export default NavBar;
