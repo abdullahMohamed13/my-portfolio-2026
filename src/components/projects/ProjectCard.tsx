@@ -25,7 +25,12 @@ export default function ProjectCard({ project, index }: { project: ProjectProps;
         <span className="absolute left-6 top-6 border border-foreground bg-accent px-2 py-1.5 font-mono text-xs">{String(index + 1).padStart(2, '0')}</span>
       </div>
       <div>
-        <h3 className="mb-5 text-[clamp(2.125rem,4vw,3.625rem)] leading-none tracking-[var(--tracking-display)]">{project.title}</h3>
+        <div className="mb-5 flex flex-wrap items-center gap-3">
+          <h3 className="text-[clamp(2.125rem,4vw,3.625rem)] leading-none tracking-[var(--tracking-display)]">{project.title}</h3>
+          <span className="border border-foreground px-2 py-1 font-mono text-[0.625rem] uppercase tracking-wide" aria-label={`${project.projectType} project`}>
+            {project.projectType}
+          </span>
+        </div>
         <p className="leading-[1.7] text-[#4c4a43]">{project.description}</p>
         <div className="my-5 flex flex-wrap gap-4" aria-label={`${project.title} technologies`}>
           {project.stackIcons.map((item) => <span className="inline-flex items-center gap-2 text-sm text-muted-foreground" key={item.text}>{item.icon}<span>{item.text}</span></span>)}
