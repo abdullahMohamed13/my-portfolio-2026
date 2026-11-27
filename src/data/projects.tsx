@@ -43,7 +43,6 @@ export const projects: ProjectProps[] = [
     ],
     description: 'Built a trilingual portfolio for The Good Studio, with English, Spanish, and French content throughout. Visitors can chat with an AI-powered studio guide about services and process, explore selected work, and send a tailored project inquiry. The experience pairs a live 3D hero mark with editorial design and responsive motion.',
     imgSrc: '/projects/studio/the-good-studio-hero.png',
-    video: 'https://res.cloudinary.com/uwwnts8h/video/upload/v1795267591/promo-cropped_z3soqw.mp4',
     liveURL: 'https://the-good-studio.abdullah-229op.workers.dev/en',
     githubURL: 'https://github.com/abdullahMohamed13/the-good-studio',
 	},

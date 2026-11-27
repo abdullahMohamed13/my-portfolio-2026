@@ -4,7 +4,6 @@ export interface ProjectProps {
   title: string
   description: string
   imgSrc: string
-  video?: string
   projectInSite?: string
   deploymentPlatform?: 'Netlify' | 'Render' | 'Github Pages' | 'Vercel'
   stack: string[]
