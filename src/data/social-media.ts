@@ -27,7 +27,7 @@ export const socialMedia: SocialMediaItem[] = [
         name: "Gmail",
         designation: "Send Email",
         image: "/contacts/gmail.svg",
-        href: "mailto:abdullah.229op@gmail.com",
+        href: "mailto:abdallahaziz.dev@gmail.com",
     },
     {
         id: 4,

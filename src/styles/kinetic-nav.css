@@ -18,20 +18,30 @@
   align-items: center;
   justify-content: space-between;
   padding-inline: var(--kinetic-frame-pad);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0;
   padding: 10px;
   background: var(--background);
   color: var(--foreground);
   transition:
     background-color 400ms ease,
-    border-color 400ms ease,
     color 400ms ease;
 }
 
 .kinetic-nav[data-menu-open='true'] .kinetic-header {
-  border-bottom-color: rgb(238 233 220 / 18%);
   background: transparent;
   color: var(--background);
+}
+
+.kinetic-nav[data-menu-open='true'] .kinetic-header {
+  position: relative;
+  z-index: 59;
+}
+
+.kinetic-nav[data-menu-open='true'] .kinetic-toggle {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 61;
 }
 
 .kinetic-logo {
@@ -43,6 +53,7 @@
   letter-spacing: var(--tracking-display);
   text-decoration: none;
 }
+
 
 .kinetic-logo span {
   color: var(--primary);
@@ -154,11 +165,13 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgb(9 9 8 / 70%);
+  z-index: 0;
+  background: rgb(9 9 8 / 100%);
 }
 
 .menu-content {
   position: absolute;
+  z-index: 1;
   inset: 0;
   overflow: hidden;
   color: var(--background);
@@ -224,7 +237,7 @@
   z-index: 2;
   display: flex;
   width: 100%;
-  max-width: 1600px;
+  max-width: none;
   height: 100%;
   margin-inline: auto;
   flex-direction: column;
@@ -415,7 +428,7 @@
   }
 
   .nav-link-text {
-    font-size: clamp(2.25rem, 12vw, 4.5rem);
+    font-size: clamp(2rem, 10.5vw, 4rem);
   }
 
   .menu-footer {
@@ -440,7 +453,7 @@
   }
 
   .nav-link-text {
-    font-size: clamp(2rem, 12.5vw, 3rem);
+    font-size: clamp(1.8rem, 11.5vw, 2.75rem);
   }
 }
 

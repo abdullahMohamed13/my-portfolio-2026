@@ -26,7 +26,7 @@ export default function ProjectsDemo() {
         <p className="portfolio-eyebrow">01 / Selected work</p>
         <div>
           <h2 id="projects-demo-title" className="text-center portfolio-title">
-            Things I helped<br />
+            Projects I helped<br />
             <em className="portfolio-title-accent not-italic">bring to life.</em>
           </h2>
         </div>

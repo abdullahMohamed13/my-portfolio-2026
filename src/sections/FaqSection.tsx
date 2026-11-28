@@ -33,7 +33,7 @@ const faqItems: FaqItem[] = [
 ];
 
 const contactHref =
-  socialMedia.find((item) => item.name === 'Gmail')?.href ?? 'mailto:abdullah.229op@gmail.com';
+  socialMedia.find((item) => item.name === 'Gmail')?.href ?? 'mailto:abdallahaziz.dev@gmail.com';
 
 // Match the horizontal rhythm of the other page sections while letting the ink flood stay full-bleed.
 const sectionStyle = {

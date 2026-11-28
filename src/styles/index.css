@@ -44,7 +44,6 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  /* Korplex ships blank glyphs for digits and punctuation; let the fallback font draw those. */
   unicode-range: U+0041-005A, U+0061-007A;
 }
 @import "tailwindcss";
@@ -155,6 +154,19 @@
 
   .portfolio-mono {
     @apply font-mono uppercase tracking-[0.08em];
+  }
+
+  .retro-text {
+    color: var(--color-foreground);
+    -webkit-text-stroke: 2px white;
+    paint-order: stroke fill;
+  
+    text-shadow:
+      0 0 0 white,
+      2px 2px 0 #007bff,
+      -2px -2px 0 #007bff,
+      0 0 5px #007bff,
+      0 0 15px rgba(0, 123, 255, 0.7);
   }
 }
 

@@ -668,7 +668,7 @@ export default function Component() {
       
       {/* Main content */}
       <div className="hero-content cosmos-content">
-        <h1 ref={titleRef} className="hero-title">
+        <h1 ref={titleRef} className="hero-title font-bricolage">
           {splitTitle('PRECISION')}
         </h1>
         

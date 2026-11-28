@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Comment, ExternalLink, Linkedin, Repeat, ThumbsUp } from 'pixelarticons/react';
 import { CoverFlowCarousel, type CoverFlowItem } from '@/components/ui/3-d-coverflow-carousel';
 import { linkedinPosts } from '@/data/linkedin-posts';
@@ -13,28 +13,13 @@ const themes: Record<Language, string[]> = {
 export default function LinkedInSection() {
   const [language, setLanguage] = useState<Language>('en');
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [hasOverflow, setHasOverflow] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const bodyRef = useRef<HTMLDivElement>(null);
   const imageTouchStartX = useRef<number | null>(null);
 
   const activePost = linkedinPosts[activeIndex] ?? linkedinPosts[0];
   const paragraphs = language === 'ar' ? activePost.arabicParagraphs : activePost.englishParagraphs;
   const dir = language === 'ar' ? 'rtl' : 'ltr';
   const languageOptions = language === 'ar' ? (['ar', 'en'] as const) : (['en', 'ar'] as const);
-
-  useEffect(() => {
-    const body = bodyRef.current;
-    if (!body || isExpanded) return;
-
-    const measure = () => setHasOverflow(body.scrollHeight > body.clientHeight + 1);
-    measure();
-
-    const observer = new ResizeObserver(measure);
-    observer.observe(body);
-    return () => observer.disconnect();
-  }, [activeIndex, language, isExpanded]);
 
   const carouselItems = useMemo<CoverFlowItem[]>(() => {
     const labels = language === 'ar'
@@ -61,7 +46,6 @@ export default function LinkedInSection() {
 
   const selectPost = (index: number) => {
     setActiveIndex(index);
-    setIsExpanded(false);
     setActiveImageIndex(0);
   };
 
@@ -76,14 +60,14 @@ export default function LinkedInSection() {
       id="linkedin"
       className="portfolio-section"
       aria-labelledby="linkedin-post-title"
-      dir={dir}
-      lang={language}
+      dir="ltr"
+      lang="en"
     >
       <div className="grid grid-cols-[1.1fr_0.9fr] items-end gap-[clamp(2rem,6vw,6rem)] max-[860px]:grid-cols-1">
         <div>
           <p className="portfolio-eyebrow flex items-center gap-2">
             <Linkedin aria-hidden="true" className="h-4 w-4" />
-            {language === 'ar' ? '04 / ملاحظات ميدانية' : '04 / Field notes'}
+            04 / Field notes
           </p>
           <h2
             id="linkedin-post-title"
@@ -93,60 +77,24 @@ export default function LinkedInSection() {
                 : 'portfolio-title'
             }`}
           >
-            {language === 'ar' ? (
-              <>
-                بكتب عشان أفهم<br />
-                <em className="portfolio-title-accent not-italic">أنا بفكر في إيه.</em>
-              </>
-            ) : (
-              <>
-                I write to figure out<br />
-                <em className="portfolio-title-accent not-italic">what I think.</em>
-              </>
-            )}
+            <>I write to figure out<br /><em className="portfolio-title-accent not-italic">what I think.</em></>
           </h2>
         </div>
 
         <div className="max-w-[34rem] max-[860px]:max-w-none">
           <p className="text-[clamp(1rem,1.5vw,1.1875rem)] leading-relaxed text-[#4c4a43]">
-            {language === 'ar'
-              ? 'معظم الملاحظات دي بدأت كحاجة كنت محتاج أشرحها لنفسي الأول: إزاي أمنع المشروع إنه يتحول لسباجيتي، ليه الـtypes تستاهل الكتابة الزيادة، وإزاي شغل التيم المفروض يكون.'
-              : 'Most of these notes started as something I had to explain to myself first: how to keep a project from turning into spaghetti, why types are worth the extra keystrokes, and what a team workflow should feel like.'}
+            Most of these notes started as something I had to explain to myself first: how to keep a project from turning into spaghetti, why types are worth the extra keystrokes, and what a team workflow should feel like.
           </p>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            {language === 'ar'
-              ? 'منشورة على LinkedIn، ومجمّعة هنا كسجل للشغل والآراء اللي بتتكوّن حواليه.'
-              : 'Published on LinkedIn, collected here as a record of the work and the opinions forming around it.'}
+            Published on LinkedIn, collected here as a record of the work and the opinions forming around it.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-4">
-            <div
-              className="inline-flex border border-foreground bg-card p-1"
-              role="group"
-              aria-label={language === 'ar' ? 'اختر لغة الملاحظات' : 'Choose the language for the notes'}
-            >
-              {languageOptions.map((code) => (
-                <button
-                  key={code}
-                  type="button"
-                  onClick={() => {
-                    setLanguage(code);
-                    setIsExpanded(false);
-                  }}
-                  aria-pressed={language === code}
-                  className={`px-3 py-1.5 font-mono text-[0.62rem] uppercase tracking-[0.12em] transition-colors ${
-                    language === code ? 'bg-foreground text-background' : 'text-foreground hover:bg-foreground/5'
-                  }`}
-                >
-                  {code === 'en' ? 'English' : 'العربية'}
-                </button>
-              ))}
-            </div>
             <span className="inline-flex items-center gap-2 border border-border bg-card px-3 py-1.5 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-muted-foreground">
               <strong dir="ltr" className="font-display text-sm leading-none tracking-normal text-foreground">
                 5.5K+
               </strong>
-              {language === 'ar' ? 'متابع' : 'followers'}
+              followers
             </span>
           </div>
         </div>
@@ -154,9 +102,9 @@ export default function LinkedInSection() {
 
       <div className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2 py-4">
         <span className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-muted-foreground">
-          {language === 'ar' ? 'ما أكتب عنه' : 'What I write about'}
+          What I write about
         </span>
-        {themes[language].map((theme) => (
+        {themes.en.map((theme) => (
           <span key={theme} className="border border-border px-2.5 py-1.5 font-mono text-[0.6rem] uppercase tracking-[0.1em]">
             {theme}
           </span>
@@ -175,23 +123,14 @@ export default function LinkedInSection() {
           activeIndex={activeIndex}
           onActiveChange={selectPost}
           dir={dir}
-          sectionLabel={language === 'ar' ? 'تصفح الملاحظات' : 'Browse the notes'}
-          ariaLabel={language === 'ar' ? 'ملاحظات من LinkedIn' : 'Notes from LinkedIn'}
+          sectionLabel="Browse the notes"
+          ariaLabel="Notes from LinkedIn"
           labels={{
-            previous: language === 'ar' ? 'الملاحظة السابقة' : 'Previous note',
-            next: language === 'ar' ? 'الملاحظة التالية' : 'Next note',
-            slide: (index, total) =>
-              language === 'ar'
-                ? `الملاحظة ${index + 1} من ${total}`
-                : `${index + 1} of ${total}`,
-            goTo: (index, title) =>
-              language === 'ar'
-                ? `اذهب إلى الملاحظة ${index + 1}: ${title}`
-                : `Go to note ${index + 1}: ${title}`,
-            live: (index, total, title) =>
-              language === 'ar'
-                ? `الملاحظة ${index + 1} من ${total}: ${title}`
-                : `Note ${index + 1} of ${total}: ${title}`,
+            previous: 'Previous note',
+            next: 'Next note',
+            slide: (index, total) => `${index + 1} of ${total}`,
+            goTo: (index, title) => `Go to note ${index + 1}: ${title}`,
+            live: (index, total, title) => `Note ${index + 1} of ${total}: ${title}`,
           }}
         />
       </div>
@@ -322,28 +261,13 @@ export default function LinkedInSection() {
           <div className="flex flex-col p-6 sm:p-8">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-muted-foreground">
-                {language === 'ar' ? 'النص الكامل' : 'The note'}
+                The note
               </p>
-              {(hasOverflow || isExpanded) && (
-                <button
-                  type="button"
-                  onClick={() => setIsExpanded((expanded) => !expanded)}
-                  aria-expanded={isExpanded}
-                  className="font-mono text-[0.62rem] uppercase tracking-[0.08em] text-primary underline-offset-4 hover:underline"
-                >
-                  {isExpanded
-                    ? (language === 'ar' ? 'اقرأ أقل' : 'Show less')
-                    : (language === 'ar' ? 'اقرأ الملاحظة كاملة' : 'Read full note')}
-                </button>
-              )}
             </div>
 
             <div
               key={`${activePost.id}-${language}-body`}
-              ref={bodyRef}
-              className={`relative mt-5 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-500 ${
-                isExpanded ? '' : 'max-h-[17rem] overflow-hidden'
-              }`}
+              className="relative mt-5 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-500"
               dir={dir}
               lang={language}
             >
@@ -352,13 +276,22 @@ export default function LinkedInSection() {
                   <p key={index} dir="auto">{paragraph}</p>
                 ))}
               </div>
-              {!isExpanded && hasOverflow && (
-                <div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-card via-card/80 to-transparent"
-                  aria-hidden="true"
-                />
-              )}
             </div>
+          </div>
+        </div>
+        <div className="flex justify-end border-t border-border p-3" dir="ltr">
+          <div className="inline-flex border border-foreground bg-card p-1" role="group" aria-label="Choose note language">
+            {languageOptions.map((code) => (
+              <button
+                key={code}
+                type="button"
+                onClick={() => setLanguage(code)}
+                aria-pressed={language === code}
+                className={`px-3 py-1.5 font-mono text-[0.62rem] uppercase tracking-[0.12em] transition-colors ${language === code ? 'bg-foreground text-background' : 'text-foreground hover:bg-foreground/5'}`}
+              >
+                {code === 'en' ? 'English' : 'العربية'}
+              </button>
+            ))}
           </div>
         </div>
       </div>

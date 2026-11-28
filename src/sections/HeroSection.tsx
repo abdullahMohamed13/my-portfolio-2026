@@ -17,9 +17,10 @@ export default function HeroSection() {
 
 			<div className="relative z-10 isolate flex min-h-0 flex-1 items-end justify-center">
 				<div className="relative isolate z-0 aspect-[1158/1358] max-h-full max-[760px]:w-[min(90%,54svh)]">
-					<div
+					<img
+						src="/hero-background.webp"
 						aria-hidden="true"
-						className="absolute left-1/2 top-[60%] -z-10 aspect-square w-[min(65%,100cqw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary"
+						className="absolute left-1/2 sm:ml-10 top-[65%] -z-10 w-[min(95%,100cqw)] -translate-x-1/2 -translate-y-1/2"
 					/>
 					<img
 						className="relative z-10 h-full w-full object-contain object-bottom"

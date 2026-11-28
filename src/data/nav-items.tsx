@@ -27,6 +27,7 @@ export const navItems = [
 export const kineticNavItems = [
     { label: 'Work', href: '#projects', meta: 'Selected projects', shape: 1 },
     { label: 'Approach', href: '#approach', meta: 'How I build', shape: 2 },
-    { label: 'Proof', href: '#proof', meta: 'GitHub & testimonials', shape: 3 },
+    { label: 'Proof', href: '#proof', meta: 'GitHub contributions', shape: 4 },
+    { label: 'Testimonials', href: '#testimonials', meta: 'What collaborators say', shape: 2 },
     { label: 'Contact', href: '#contact', meta: 'Start a conversation', shape: 4 },
 ] as const;

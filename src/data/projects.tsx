@@ -1,4 +1,5 @@
-import { SiTypescript, SiTailwindcss, SiJavascript, SiReact, SiCss3, SiClerk } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiReact, SiClerk, SiNodedotjs, SiExpress, SiMongodb, SiMongoose, SiJsonwebtokens, SiNextdotjs, SiThreedotjs, SiCloudflare, SiFramer, SiPostgresql, SiFirebase, SiFastapi } from 'react-icons/si';
+import { Zap, MessagesSquare, ShieldCheck, Database } from 'lucide-react';
 import type { ProjectProps } from "@/types/ProjectProps";
 
 export const projects: ProjectProps[] = [
@@ -8,9 +9,12 @@ export const projects: ProjectProps[] = [
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Convex', 'Better Auth', 'Stream Chat'],
     themeColor: '#12623A',
     stackIcons: [
-      { text: 'React', icon: <SiReact /> },
+      { text: 'Next.js', icon: <SiNextdotjs /> },
       { text: 'TypeScript', icon: <SiTypescript /> },
       { text: 'Tailwind CSS', icon: <SiTailwindcss /> },
+      { text: 'Convex', icon: <Database /> },
+      { text: 'Better Auth', icon: <ShieldCheck /> },
+      { text: 'Stream Chat', icon: <MessagesSquare /> },
     ],
     description: 'A real-time team communication platform for organized workspace, channel, and direct message conversations. Includes workspace management, invitations, join requests, member roles, guest access, profiles, notifications, and responsive chat navigation.',
     imgSrc: '/projects/openchats/Openchats-hero.png',
@@ -25,8 +29,11 @@ export const projects: ProjectProps[] = [
     themeColor: '#0096ff',
     stackIcons: [
       { text: 'React', icon: <SiReact /> },
-      { text: 'JavaScript', icon: <SiJavascript /> },
-      { text: 'CSS', icon: <SiCss3 /> },
+      { text: 'Node.js', icon: <SiNodedotjs /> },
+      { text: 'Express', icon: <SiExpress /> },
+      { text: 'MongoDB', icon: <SiMongodb /> },
+      { text: 'Mongoose', icon: <SiMongoose /> },
+      { text: 'JWT', icon: <SiJsonwebtokens /> },
     ],
     description: 'Official IEEE student branch website for sharing branch information, events, and community updates.',
     imgSrc: '/projects/ieee/ieee-landing.png',
@@ -43,6 +50,10 @@ export const projects: ProjectProps[] = [
       { text: 'React', icon: <SiReact /> },
       { text: 'TypeScript', icon: <SiTypescript /> },
       { text: 'Tailwind CSS', icon: <SiTailwindcss /> },
+      { text: 'GSAP', icon: <Zap /> },
+      { text: 'Three.js', icon: <SiThreedotjs /> },
+      { text: 'React Three Fiber', icon: <SiReact /> },
+      { text: 'Cloudflare AI', icon: <SiCloudflare /> },
     ],
     description: 'Built a trilingual portfolio for The Good Studio, with English, Spanish, and French content throughout. Visitors can chat with an AI-powered studio guide about services and process, explore selected work, and send a tailored project inquiry. The experience pairs a live 3D hero mark with editorial design and responsive motion.',
     imgSrc: '/projects/studio/the-good-studio-hero.png',
@@ -56,7 +67,16 @@ export const projects: ProjectProps[] = [
     projectType: 'Team',
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Express', 'PostgreSQL', 'Firebase', 'FastAPI'],
     themeColor: '#2E5C5A',
-    stackIcons: [],
+    stackIcons: [
+      { text: 'React', icon: <SiReact /> },
+      { text: 'TypeScript', icon: <SiTypescript /> },
+      { text: 'Tailwind CSS', icon: <SiTailwindcss /> },
+      { text: 'Framer Motion', icon: <SiFramer /> },
+      { text: 'Express', icon: <SiExpress /> },
+      { text: 'PostgreSQL', icon: <SiPostgresql /> },
+      { text: 'Firebase', icon: <SiFirebase /> },
+      { text: 'FastAPI', icon: <SiFastapi /> },
+    ],
     description: 'An AI-assisted lung cancer screening platform that analyzes chest CT scans and X-ray images, provides structured result reviews and history, recommends hospitals for critical cases, and offers a patient-facing assistant for clearer follow-up guidance.',
     imgSrc: '/projects/morgan/morgan-landing.png',
     liveURL: 'https://morgans-hope.vercel.app/',
@@ -74,6 +94,7 @@ export const projects: ProjectProps[] = [
       { text: 'TypeScript', icon: <SiTypescript /> },
       { text: 'TailwindCSS', icon: <SiTailwindcss /> },
       { text: 'Clerk', icon: <SiClerk /> },
+      { text: 'Convex', icon: <Database /> },
     ],
     description: `Full-stack booking system built for a Mixed Martial Arts (MMA) gym.
     The system enables fighters to explore the gym's classes, coaches, branches, and membership offerings.

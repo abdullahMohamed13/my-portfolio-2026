@@ -320,7 +320,7 @@ function InfoPanel({ p, onClose }: { p: Project; onClose: () => void }) {
           <div data-info-item className="flex items-start justify-between gap-4">
             <div>
               <p className="font-mono text-[0.625rem] uppercase tracking-[0.16em]" style={{ color: p.accent }}>
-                {p.kind ?? "Project"}
+                {p.kind ?? "Project"} Work
               </p>
               <h3 id={titleId} className="mt-2 font-heading text-[clamp(1.6rem,4vw,2.4rem)] leading-[1.05]">{p.name}</h3>
             </div>

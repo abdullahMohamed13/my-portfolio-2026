@@ -307,14 +307,11 @@ export default function KineticNavigation() {
   return (
     <div ref={containerRef} className="kinetic-nav" data-menu-open={isMenuOpen}>
       <header className="kinetic-header">
-        <a
-          href="#hero"
+        <div
           className="kinetic-logo"
-          aria-label="Abdallah Aziz home"
-          onClick={(event) => handleNavClick(event, '#hero')}
         >
-          Abdallah <span>Aziz</span>
-        </a>
+          <img className="h-8 w-auto object-contain sm:h-24" src="/logo.webp" alt="Abdallah Aziz" />
+        </div>
 
         <div className="kinetic-actions">
           <button
@@ -468,7 +465,7 @@ export default function KineticNavigation() {
               </div>
 
               <div className="menu-footer-links">
-                <a href="mailto:abdullah.229op@gmail.com">Email</a>
+                <a href="mailto:abdallahaziz.dev@gmail.com">Email</a>
                 {socialLinks.map((link) => (
                   <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
                     {link.label}
